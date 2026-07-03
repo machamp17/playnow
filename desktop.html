@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>PLAY BRANDING — 遊びを、ブランドに。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="fontlink" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Dela+Gothic+One&family=Kaisei+Tokumin:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=Yuji+Syuku&family=Kaisei+HarunoUmi:wght@700&family=Shippori+Mincho+B1:wght@700;800&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111;
+    --ink-2:#2b2b2b;
+    --ink-3:#5c5c5c;
+    --paper:#FFFBEA;
+    --paper-2:#FFF3B0;
+    --yellow:#FFD21F;
+    --yellow-2:#FFB800;
+    --red:#E8342A;
+    --red-2:#C41E1E;
+    --blue:#1E7FD6;
+    --navy:#0F1A2C;
+    --line:#111;
+    --jp: 'Zen Kaku Gothic New','Hiragino Sans','Yu Gothic',sans-serif;
+    --display: 'Kaisei Tokumin','Zen Kaku Gothic New',serif;
+    --sans: 'Zen Kaku Gothic New','Hiragino Sans',sans-serif;
+    --impact: 'Bowlby One','Dela Gothic One',sans-serif;
+    --pow: 'Bangers','Bowlby One',sans-serif;
+    --ticker: 'Dela Gothic One','Bowlby One',sans-serif;
+  }
+  /* ── TAP RIPPLE ── */
+  .tap-ripple{position:fixed;pointer-events:none;z-index:9999;width:54px;height:54px;margin:-27px 0 0 -27px;animation:tapPop .55s cubic-bezier(.2,.8,.2,1) forwards}
+  .tap-ripple .stud{position:relative;width:100%;height:100%;background:var(--yellow);border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);display:grid;place-items:center;font-family:var(--impact);font-size:26px;color:var(--ink);border-radius:4px}
+  .tap-ripple .stud::before,.tap-ripple .stud::after{content:'';position:absolute;top:-8px;width:12px;height:8px;background:var(--yellow);border:3px solid var(--line);border-bottom:none;box-sizing:content-box;border-radius:2px 2px 0 0}
+  .tap-ripple .stud::before{left:6px}
+  .tap-ripple .stud::after{right:6px}
+  .tap-ripple .ring{position:absolute;inset:-10px;border:3px solid var(--red);border-radius:50%;opacity:0;animation:tapRing .55s cubic-bezier(.2,.8,.2,1) forwards}
+  .tap-ripple .spark{position:absolute;left:50%;top:50%;width:7px;height:7px;background:var(--yellow);border:2px solid var(--line);margin:-4px 0 0 -4px;opacity:0;animation:tapSpark .5s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes tapPop{0%{transform:scale(.2) rotate(-20deg);opacity:0}40%{transform:scale(1.15) rotate(6deg);opacity:1}70%{transform:scale(1) rotate(0);opacity:1}100%{transform:scale(.9) rotate(0);opacity:0}}
+  @keyframes tapRing{0%{transform:scale(.4);opacity:0}40%{transform:scale(1);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;color:var(--ink);font-family:var(--sans);background:var(--paper);
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='42' viewBox='0 0 36 42'><g stroke='%23111' stroke-width='2.5' stroke-linejoin='round'><rect x='6' y='2' width='7' height='6' fill='%23FFD21F' stroke-linecap='round'/><rect x='23' y='2' width='7' height='6' fill='%23FFD21F' stroke-linecap='round'/><rect x='3' y='8' width='30' height='28' fill='%23FFD21F'/></g><text x='18' y='28' font-family='Bowlby One,sans-serif' font-size='18' text-anchor='middle' fill='%23111'>P</text></svg>") 18 21, auto;
+  }
+  a,a *,button,button *,.btn,.btn *,[onclick],[onclick] *,[role="button"],[role="button"] *,.menu a,.menu a *,.service-card,.service-card *,.phil-tab,.phil-tab *,.faq-q,.faq-q *,.note-item,.note-item *,.line-btn,.line-btn *,.line-float,.line-float *,.chip,.chip *,summary,summary *,[data-jump],[data-jump] *{
+    cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='46' viewBox='0 0 40 46'><g stroke='%23111' stroke-width='2.5' stroke-linejoin='round'><rect x='7' y='3' width='7' height='6' fill='%23E8342A'/><rect x='26' y='3' width='7' height='6' fill='%23E8342A'/><rect x='4' y='9' width='32' height='30' fill='%23E8342A'/></g><text x='20' y='30' font-family='Bowlby One,sans-serif' font-size='18' text-anchor='middle' fill='%23fff'>!</text></svg>") 20 23, pointer !important;
+  }
+  body{
+    background-image:
+      radial-gradient(rgba(0,0,0,.15) 1.2px, transparent 1.2px),
+      radial-gradient(rgba(0,0,0,.08) 1px, transparent 1px);
+    background-size: 22px 22px, 22px 22px;
+    background-position: 0 0, 11px 11px;
+  }
+  a{color:inherit;text-decoration:none}
+  /* ── NAV ── */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:flex-end;padding:20px 28px 14px;
+    background:var(--paper);border-bottom:3px solid var(--line);
+  }
+  .logo{display:flex;align-items:center;gap:14px;font-family:var(--impact);font-size:18px;letter-spacing:.04em}
+  .logo .stud{
+    position:relative;
+    display:inline-grid;place-items:center;width:44px;height:44px;
+    background:var(--yellow);border:3px solid var(--line);
+    box-shadow:3px 3px 0 var(--line);font-family:var(--impact);font-size:22px;
+    margin-top:8px;
+  }
+  /* Two LEGO studs on top of the logo brick */
+  .logo .stud::before,
+  .logo .stud::after{
+    content:'';position:absolute;top:-7px;
+    width:10px;height:7px;
+    background:var(--yellow);
+    border:3px solid var(--line);
+    border-bottom:none;
+    box-sizing:content-box;
+    border-radius:2px 2px 0 0;
+  }
+  .logo .stud::before{left:4px}
+  .logo .stud::after{right:4px}
+  .logo small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--ink-3);margin-top:-2px}
+  .menu{margin-left:auto;display:flex;align-items:flex-end;gap:10px;font-weight:900;font-size:14px;letter-spacing:.1em}
+  .menu > a:not(.btn){
+    position:relative;display:inline-block;
+    padding:14px 18px 10px;
+    background:var(--paper-2);
+    border:3px solid var(--line);
+    box-shadow:3px 3px 0 var(--line);
+    font-family:var(--impact);
+    color:var(--ink);
+    transition:transform .1s, box-shadow .1s, background .1s;
+  }
+  .menu > a:not(.btn)::before,
+  .menu > a:not(.btn)::after{
+    content:'';position:absolute;top:-6px;
+    width:12px;height:6px;
+    background:inherit;
+    border:3px solid var(--line);
+    border-bottom:none;
+    box-sizing:content-box;
+    border-radius:2px 2px 0 0;
+  }
+  .menu > a:not(.btn)::before{left:12px}
+  .menu > a:not(.btn)::after{right:12px}
+  .menu > a:not(.btn):hover{
+    transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--line);
+    background:var(--yellow);
+  }
+  .menu > a:nth-child(1):not(.btn){background:#FFE9A8}
+  .menu > a:nth-child(2):not(.btn){background:#FFC2BE}
+  .menu > a:nth-child(3):not(.btn){background:#BEE3FF}
+  .menu > a:nth-child(4):not(.btn){background:#D4F0C4}
+  .menu > a:nth-child(5):not(.btn){background:#E9DCFF}
+  /* The LET'S BUILD button already styled as .btn — give it studs too */
+  .menu > a.btn{position:relative;padding:14px 18px 10px}
+  .menu > a.btn::before,
+  .menu > a.btn::after{
+    content:'';position:absolute;top:-6px;
+    width:12px;height:6px;
+    background:inherit;
+    border:3px solid var(--line);
+    border-bottom:none;
+    box-sizing:content-box;
+    border-radius:2px 2px 0 0;
+  }
+  .menu > a.btn::before{left:14px}
+  .menu > a.btn::after{right:14px}
+  .btn{
+    display:inline-block;padding:10px 18px;border:3px solid var(--line);
+    background:var(--yellow);font-family:var(--impact);letter-spacing:.05em;
+    box-shadow:4px 4px 0 var(--line);transition:all .1s;cursor:pointer;font-size:15px;
+  }
+  .btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--line)}
+  .btn.red{background:var(--red);color:#fff}
+  .btn.dark{background:var(--ink);color:var(--yellow)}
+  .btn.lg{padding:14px 24px;font-size:17px;box-shadow:6px 6px 0 var(--line)}
+  .btn.xl{padding:18px 32px;font-size:20px;box-shadow:7px 7px 0 var(--line)}
+  /* ── LAYOUT ── */
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+  .tag{
+    display:inline-block;padding:6px 14px;border:3px solid var(--line);
+    background:var(--red);color:#fff;font-family:var(--impact);
+    box-shadow:3px 3px 0 var(--line);font-size:14px;letter-spacing:.1em;
+  }
+  .tag.yellow{background:var(--yellow);color:var(--ink)}
+  .tag.dark{background:var(--ink);color:var(--yellow)}
+  /* Comic burst */
+  .burst{
+    display:inline-block;background:var(--red);color:#fff;font-family:var(--pow);
+    padding:12px 18px 8px;font-size:28px;letter-spacing:.04em;
+    border:3px solid var(--line);box-shadow:4px 4px 0 var(--line);
+    transform:rotate(-6deg);
+    clip-path:polygon(0% 20%, 8% 0%, 20% 15%, 35% 0%, 50% 12%, 65% 0%, 80% 15%, 92% 0%, 100% 22%, 92% 40%, 100% 55%, 90% 72%, 100% 90%, 85% 100%, 70% 88%, 55% 100%, 40% 90%, 25% 100%, 12% 88%, 0% 100%, 8% 75%, 0% 55%, 8% 40%);
+  }
+  /* ── HERO ── */
+  .hero{padding:50px 0 30px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .hero-eyebrow{background:var(--red);color:#fff;font-family:var(--impact);
+    display:inline-block;padding:8px 16px;border:3px solid var(--line);
+    box-shadow:4px 4px 0 var(--line);font-size:15px;letter-spacing:.1em;margin-bottom:22px}
+  .h1{
+    font-family:var(--display);font-weight:800;font-size:94px;line-height:1.14;
+    letter-spacing:.02em;margin:0;
+    font-feature-settings:"palt";
+    text-shadow: 4px 4px 0 rgba(0,0,0,.06);
+  }
+  .h1 .accent{color:var(--red);position:relative;display:inline-block}
+  .h1 .accent::after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:8px;background:var(--yellow);z-index:-1}
+  .hero-sub{
+    display:inline-block;margin-top:22px;background:var(--yellow);
+    border:3px solid var(--line);padding:12px 18px;box-shadow:4px 4px 0 var(--line);
+    font-family:var(--jp);font-weight:900;font-size:20px;letter-spacing:.02em;
+  }
+  .hero-body{
+    margin-top:26px;background:#fff;border:3px solid var(--line);
+    padding:18px 20px;box-shadow:4px 4px 0 var(--line);
+    font-family:var(--jp);font-size:16px;line-height:1.95;max-width:520px;
+  }
+  .hero-body b{color:var(--red);font-weight:900}
+  .hero-cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+  /* Hero illustration */
+  .hero-art{
+    position:relative;border:4px solid var(--line);
+    background:#FFF8E1;
+    box-shadow:10px 10px 0 var(--line);min-height:420px;
+    overflow:hidden;
+  }
+  .panel{
+    position:absolute;background:#fff;border:3px solid var(--line);
+    box-shadow:4px 4px 0 var(--line);font-family:var(--jp);
+  }
+  .bubble{
+    position:relative;display:inline-block;background:#fff;border:3px solid var(--line);
+    padding:10px 14px;font-family:var(--pow);font-size:22px;
+    box-shadow:3px 3px 0 var(--line);
+  }
+  .bubble::after{
+    content:'';position:absolute;left:20px;bottom:-14px;width:16px;height:14px;
+    background:inherit;border-right:3px solid var(--line);border-bottom:3px solid var(--line);
+    transform:skewX(-20deg);
+  }
+  /* Figure character — SVG LEGO minifig */
+  .figure{position:absolute}
+  .figure svg{display:block;filter:drop-shadow(4px 4px 0 rgba(0,0,0,.9))}
+
+  /* Stud decoration */
+  .stud-row{display:inline-flex;gap:4px;align-items:center}
+  .stud-dot{width:10px;height:10px;border-radius:50%;background:var(--yellow);border:2px solid var(--line);box-shadow:inset -1px -1px 0 rgba(0,0,0,.25)}
+
+  /* Tape sticker */
+  .tape{position:absolute;background:rgba(255,255,255,.7);border:1px dashed rgba(0,0,0,.4);width:70px;height:22px;backdrop-filter:blur(1px)}
+
+  /* Halftone panel */
+  .halftone{position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(0,0,0,.28) 1.5px,transparent 1.8px);
+    background-size:8px 8px;opacity:.6;
+    mask-image:linear-gradient(135deg,#000 0%, transparent 55%);
+  }
+
+  /* Ticker */
+  .ticker{
+    overflow:hidden;border-top:3px solid var(--line);border-bottom:3px solid var(--line);
+    background:var(--ink);color:var(--yellow);padding:18px 0;margin:30px 0;
+    font-family:var(--ticker);font-size:20px;letter-spacing:.02em;white-space:nowrap;line-height:1;
+  }
+  .ticker-track span{display:inline-flex;align-items:center;height:26px}
+  .ticker.yellow{background:var(--yellow);color:var(--ink)}
+  .ticker.red{background:var(--red);color:#fff}
+  .ticker-track{display:inline-flex;animation:scroll 30s linear infinite;gap:40px;padding-left:40px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* Chapter */
+  .chap{display:inline-block;background:var(--ink);color:var(--yellow);
+    font-family:var(--impact);padding:8px 16px;letter-spacing:.15em;font-size:15px;border:3px solid var(--line);box-shadow:4px 4px 0 var(--line)}
+  .chap.red{background:var(--red);color:#fff}
+  .chap.yellow{background:var(--yellow);color:var(--ink)}
+
+  .h2{font-family:var(--display);font-weight:800;font-size:52px;line-height:1.32;margin:20px 0 0;letter-spacing:.02em;font-feature-settings:"palt"}
+  .h2 .accent{color:var(--red)}
+  .h1,.h2,.cta-box h2,.service-card h3,.phil-body h3,.note-hero h3{text-wrap:pretty}
+
+  /* About section */
+  .about{padding:60px 0}
+  .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;margin-top:34px;align-items:flex-start}
+  .readme{background:#fff;border:3px dashed var(--line);padding:24px;box-shadow:5px 5px 0 var(--line)}
+  .readme .label{font-family:var(--impact);font-size:15px;letter-spacing:.2em;margin-bottom:10px;display:block}
+  .readme p{font-family:var(--jp);font-size:16px;line-height:2.0;margin:0 0 14px}
+  .readme .hl{background:var(--yellow);padding:2px 8px;font-weight:900}
+
+  .diagram{background:#fff;border:3px solid var(--line);padding:24px;box-shadow:5px 5px 0 var(--line)}
+  .diagram .label{font-family:var(--impact);font-size:14px;letter-spacing:.2em}
+  .diagram svg{width:100%;height:280px}
+  .diagram .cap{font-family:var(--jp);font-size:13px;color:var(--ink-3);text-align:center;margin-top:6px}
+
+  .keywords{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
+  .kw{background:var(--navy);color:#fff;border:3px solid var(--line);padding:24px;box-shadow:6px 6px 0 var(--line)}
+  .kw .k{display:inline-block;padding:4px 12px;font-family:var(--impact);font-size:14px;letter-spacing:.2em;background:var(--red);border:2px solid var(--line)}
+  .kw.blue .k{background:var(--blue)}
+  .kw h3{font-family:var(--jp);font-weight:900;font-size:24px;margin:14px 0 10px}
+  .kw p{font-family:var(--jp);font-size:15px;line-height:1.95;margin:0;color:rgba(255,255,255,.9)}
+
+  .audience{margin-top:30px}
+  .audience-label{font-family:var(--impact);font-size:14px;letter-spacing:.2em}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .chip{display:inline-block;background:#fff;border:3px solid var(--line);padding:8px 14px;
+    font-family:var(--jp);font-weight:700;font-size:15px;box-shadow:3px 3px 0 var(--line)}
+  .chip:nth-child(odd){background:var(--yellow)}
+  .chip:nth-child(even){background:#fff}
+
+  /* Services */
+  .services{padding:60px 0}
+  .service-row{display:grid;grid-template-columns:280px 1fr;gap:24px;margin-top:30px;align-items:stretch}
+  .service-row.rev{grid-template-columns:1fr 280px}
+  .service-art{
+    position:relative;border:4px solid var(--line);
+    box-shadow:6px 6px 0 var(--line);overflow:hidden;
+    aspect-ratio:640/1072;
+    background:#FFF8E1;
+  }
+  .service-art.red{background-color:var(--red)}
+  .service-art.yellow{background-color:var(--yellow)}
+  .service-art.blue{background-color:var(--blue)}
+  .service-card{background:#FFFBEA;border:4px solid var(--line);padding:34px 32px;box-shadow:6px 6px 0 var(--line);position:relative}
+  .service-card .step{position:absolute;top:-22px;right:24px;width:50px;height:50px;
+    background:var(--ink);color:var(--yellow);border:3px solid var(--line);
+    display:grid;place-items:center;font-family:var(--impact);font-size:22px;box-shadow:3px 3px 0 var(--line)}
+  .service-card .eyebrow{font-family:var(--impact);font-size:14px;letter-spacing:.25em;color:var(--red)}
+  .service-card.yellow .eyebrow{color:var(--yellow-2)}
+  .service-card.blue .eyebrow{color:var(--blue)}
+  .service-card h3{font-family:var(--display);font-weight:800;font-size:30px;margin:14px 0 12px;line-height:1.4;letter-spacing:.02em;font-feature-settings:"palt"}
+  .service-card .lead{font-family:var(--jp);font-weight:700;font-size:18px;margin:0 0 12px;line-height:1.55}
+  .service-card p{font-family:var(--jp);font-size:16px;line-height:2;margin:0 0 16px}
+  .service-card ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:14px 0 0;margin:0;list-style:none;font-family:var(--jp);font-size:15px;font-weight:700;border-top:2px dashed var(--line)}
+  .service-card li{padding:4px 0}
+  .service-card li::before{content:'✓ ';color:var(--red);font-weight:900}
+  .service-card .benefit{
+    margin-top:18px;padding:14px 16px;background:var(--ink);color:var(--yellow);
+    border:3px solid var(--line);font-family:var(--jp);font-size:15px;font-weight:700;line-height:1.7;
+    box-shadow:3px 3px 0 var(--line);
+  }
+  .service-card .benefit b{color:#fff;font-weight:900}
+  .service-card .benefit .bl{
+    display:inline-block;font-family:var(--impact);font-size:12px;letter-spacing:.2em;
+    background:var(--red);color:#fff;padding:2px 10px;margin-right:10px;border:2px solid var(--line);vertical-align:middle;
+  }
+
+  /* Philosophy tabs */
+  .philosophy{padding:60px 0}
+  .phil-tablist{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:28px;border:3px solid var(--line);background:#fff;box-shadow:6px 6px 0 var(--line)}
+  .phil-tab{
+    padding:18px 14px;cursor:pointer;font-family:var(--jp);
+    border-right:3px solid var(--line);position:relative;
+    transition:all .1s;
+  }
+  .phil-tab:last-child{border-right:none}
+  .phil-tab:hover{background:var(--paper-2)}
+  .phil-tab.on{background:var(--yellow)}
+  .phil-tab .n{font-family:var(--impact);font-size:13px;letter-spacing:.2em;color:var(--ink-3)}
+  .phil-tab .t{font-family:var(--impact);font-weight:400;font-size:28px;margin-top:10px;letter-spacing:.04em;line-height:1}
+  .phil-tab.on .t{color:var(--ink)}
+  .phil-body{
+    background:#fff;border:3px solid var(--line);border-top:none;
+    padding:36px;box-shadow:6px 6px 0 var(--line);margin-top:-6px;
+    display:grid;grid-template-columns:1fr 280px;gap:36px;align-items:flex-start;min-height:280px;
+  }
+  .phil-body .label{font-family:var(--impact);font-size:13px;letter-spacing:.2em;color:var(--red)}
+  .phil-body h3{font-family:var(--display);font-weight:800;font-size:31px;margin:12px 0 18px;line-height:1.42;letter-spacing:.02em;font-feature-settings:"palt"}
+  .phil-body p{font-family:var(--jp);font-size:16px;line-height:2;margin:0 0 14px}
+  .phil-side{background:var(--paper-2);border:3px solid var(--line);padding:18px;box-shadow:4px 4px 0 var(--line)}
+  .phil-side .sl{font-family:var(--impact);font-size:13px;letter-spacing:.2em;margin-bottom:8px;display:block}
+  .phil-side ul{padding:0;margin:0;list-style:none;font-family:var(--jp);font-size:14px;display:flex;flex-direction:column;gap:6px}
+
+  /* Note section */
+  .note{padding:60px 0}
+  .note-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;margin-top:30px}
+  .note-hero{background:#fff;border:3px solid var(--line);padding:28px;box-shadow:6px 6px 0 var(--line)}
+  .note-hero h3{font-family:var(--display);font-weight:800;font-size:31px;margin:14px 0 12px;line-height:1.4;letter-spacing:.02em;font-feature-settings:"palt"}
+  .note-list{display:flex;flex-direction:column;gap:12px}
+  .note-item{background:#fff;border:3px solid var(--line);padding:16px 18px;box-shadow:4px 4px 0 var(--line);cursor:pointer;transition:.1s}
+  .note-item:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--line)}
+  .note-item .meta{font-family:var(--impact);font-size:12px;letter-spacing:.2em;color:var(--ink-3)}
+  .note-item h4{font-family:var(--jp);font-weight:900;font-size:16px;margin:6px 0 0;line-height:1.55}
+
+  /* FAQ */
+  .faq{padding:60px 0}
+  .faq-list{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:#fff;border:3px solid var(--line);box-shadow:5px 5px 0 var(--line);overflow:hidden}
+  .faq-q{padding:18px 22px;cursor:pointer;display:flex;gap:16px;align-items:center;font-family:var(--jp);font-weight:700;font-size:16px}
+  .faq-q .qm{width:36px;height:36px;flex-shrink:0;background:var(--red);color:#fff;border:3px solid var(--line);display:grid;place-items:center;font-family:var(--impact);font-size:18px}
+  .faq-q .plus{margin-left:auto;font-family:var(--impact);font-size:24px;transition:.2s}
+  .faq-item.open .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;border-top:0 solid var(--line);padding:0 22px}
+  .faq-item.open .faq-a{max-height:400px;padding:16px 22px 22px;border-top:3px solid var(--line)}
+  .faq-a p{font-family:var(--jp);font-size:15px;line-height:1.95;margin:0;padding-left:52px}
+
+  /* CTA */
+  .cta{padding:70px 0}
+  .cta-box{
+    background:var(--navy);color:#fff;border:4px solid var(--line);
+    box-shadow:10px 10px 0 var(--line);padding:54px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .cta-box::before{
+    content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;
+    background:conic-gradient(from 0deg, var(--yellow) 0 10%, transparent 10% 20%, var(--yellow) 20% 30%, transparent 30% 40%, var(--yellow) 40% 50%, transparent 50% 60%, var(--yellow) 60% 70%, transparent 70% 80%, var(--yellow) 80% 90%, transparent 90% 100%);
+    opacity:.15;border-radius:50%;
+  }
+  .cta-box .chap{background:var(--yellow);color:var(--ink)}
+  .cta-box h2{font-family:var(--display);font-weight:800;font-size:50px;line-height:1.35;margin:22px 0 16px;color:#fff;letter-spacing:.02em;font-feature-settings:"palt"}
+  .cta-box p{font-family:var(--jp);font-size:16px;line-height:1.9;color:rgba(255,255,255,.8);margin:0 0 24px}
+  .line-btn{
+    display:inline-flex;align-items:center;gap:12px;background:#06C755;color:#fff;
+    padding:20px 36px;border:3px solid var(--line);box-shadow:6px 6px 0 var(--line);
+    font-family:var(--impact);font-size:22px;letter-spacing:.05em;cursor:pointer;
+    transition:.1s;
+  }
+  .line-btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--line)}
+  .line-btn .ico{width:32px;height:32px;background:#fff;border-radius:8px;display:grid;place-items:center;color:#06C755;font-family:var(--impact);font-size:18px}
+  .line-sub{margin-top:14px;font-family:var(--jp);font-size:14px;color:rgba(255,255,255,.7)}
+
+  /* Footer */
+  footer{background:var(--ink);color:#fff;padding:54px 0 24px;margin-top:40px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:40px}
+  .footer-grid h5{font-family:var(--impact);font-size:14px;letter-spacing:.2em;color:var(--yellow);margin:0 0 14px}
+  .footer-grid a{display:block;font-family:var(--jp);font-size:14px;line-height:2;color:rgba(255,255,255,.8);transition:.1s}
+  .footer-grid a:hover{color:var(--yellow)}
+  .footer-brand p{font-family:var(--jp);font-size:14px;line-height:1.9;color:rgba(255,255,255,.7);margin:14px 0 0}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);font-family:var(--impact);font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+
+  /* Floating LINE button */
+  .line-float{
+    position:fixed;bottom:24px;right:24px;z-index:80;
+    display:flex;align-items:center;gap:10px;background:#06C755;color:#fff;
+    padding:14px 20px;border:3px solid var(--line);box-shadow:5px 5px 0 var(--line);
+    font-family:var(--impact);font-size:16px;cursor:pointer;letter-spacing:.05em;
+  }
+  .line-float:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--line)}
+
+  /* Responsive */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr}
+    .h1{font-size:60px}
+    .about-grid{grid-template-columns:1fr}
+    .keywords{grid-template-columns:1fr}
+    .service-row,.service-row.rev{grid-template-columns:1fr}
+    .phil-tablist{grid-template-columns:1fr 1fr}
+    .phil-tab{border-bottom:3px solid var(--line)}
+    .phil-body{grid-template-columns:1fr}
+    .note-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .menu{display:none}
+    .h2{font-size:40px}
+    .cta-box h2{font-size:34px}
+    .cta-box{padding:36px 24px}
+  }
+
+  /* ── PRELOADER: PLAY BRANDING ── */
+  .preloader{
+    position:fixed;inset:0;z-index:99999;background:var(--navy);
+    background-image:radial-gradient(rgba(255,255,255,.12) 1.2px, transparent 1.2px);
+    background-size:18px 18px;
+    display:grid;place-items:center;
+    overflow:hidden;
+    animation:preloadOut .7s cubic-bezier(.7,0,.3,1) 2.6s forwards;
+  }
+  .preloader.done{display:none!important}
+  .preloader-inner{text-align:center;transform:translateY(-10px)}
+  .preloader .bricks{display:flex;gap:10px;justify-content:center;margin-bottom:26px;height:42px}
+  .preloader .brick{
+    position:relative;width:36px;height:26px;border:3px solid #000;
+    box-shadow:3px 3px 0 #000;opacity:0;
+    transform:translateY(-140px) rotate(-10deg);
+    animation:brickDrop .38s cubic-bezier(.3,1.4,.4,1) forwards;
+  }
+  .preloader .brick::before,.preloader .brick::after{
+    content:'';position:absolute;top:-9px;width:9px;height:9px;
+    background:inherit;border:3px solid #000;border-bottom:none;
+    box-sizing:content-box;
+  }
+  .preloader .brick::before{left:3px}
+  .preloader .brick::after{right:3px}
+  .preloader .brick:nth-child(1){background:var(--yellow);animation-delay:.05s}
+  .preloader .brick:nth-child(2){background:var(--red);animation-delay:.18s}
+  .preloader .brick:nth-child(3){background:var(--blue);animation-delay:.31s}
+  .preloader .brick:nth-child(4){background:#2BB673;animation-delay:.44s}
+  .preloader .brick:nth-child(5){background:#F39200;animation-delay:.57s}
+  .preloader .brick:nth-child(6){background:var(--yellow);animation-delay:.70s}
+  .preloader .brick:nth-child(7){background:var(--red);animation-delay:.83s}
+  .preloader .pbTitle{
+    font-family:var(--impact);font-size:clamp(44px,9vw,110px);
+    color:var(--yellow);letter-spacing:.02em;line-height:1;
+    text-shadow:5px 5px 0 rgba(0,0,0,.35);
+    opacity:0;transform:scale(.85);
+    animation:pbPop .55s cubic-bezier(.2,1.6,.4,1) 1.05s forwards;
+  }
+  .preloader .pbSub{
+    font-family:var(--jp);font-weight:700;color:#fff;opacity:0;
+    font-size:clamp(12px,1.3vw,16px);letter-spacing:.25em;margin-top:14px;
+    animation:pbFade .5s ease 1.5s forwards;
+  }
+  .preloader .pbBar{
+    width:180px;height:6px;margin:22px auto 0;border:2px solid #fff;
+    background:rgba(255,255,255,.08);position:relative;opacity:0;
+    animation:pbFade .4s ease 1.7s forwards;
+  }
+  .preloader .pbBar::after{
+    content:'';position:absolute;inset:0;background:var(--yellow);
+    transform-origin:left;transform:scaleX(0);
+    animation:pbFill .9s cubic-bezier(.6,.1,.4,1) 1.75s forwards;
+  }
+  @keyframes brickDrop{
+    0%{opacity:0;transform:translateY(-160px) rotate(-15deg)}
+    60%{opacity:1;transform:translateY(8px) rotate(3deg)}
+    80%{transform:translateY(-3px) rotate(-1deg)}
+    100%{opacity:1;transform:translateY(0) rotate(0)}
+  }
+  @keyframes pbPop{to{opacity:1;transform:scale(1)}}
+  @keyframes pbFade{to{opacity:1}}
+  @keyframes pbFill{to{transform:scaleX(1)}}
+  @keyframes preloadOut{to{opacity:0;visibility:hidden;transform:scale(1.02)}}
+  body.preloading{overflow:hidden}
+</style>
+</head>
+<body class="preloading">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="bricks">
+      <div class="brick"></div><div class="brick"></div><div class="brick"></div>
+      <div class="brick"></div><div class="brick"></div><div class="brick"></div>
+      <div class="brick"></div>
+    </div>
+    <div class="pbTitle">PLAY BRANDING</div>
+    <div class="pbSub">ブランディングは遊びだ。</div>
+    <div class="pbBar"></div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="logo">
+    <span class="stud">P</span>
+    <div>PLAY<small>BRANDING</small></div>
+  </div>
+  <div class="menu">
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#philosophy">PHILOSOPHY</a>
+    <a href="#note">NOTE</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn">LET'S BUILD!</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-eyebrow">PLAY BRANDING × PRE-REAL</span>
+      <h1 class="h1">遊びを、<br/><span class="accent">ブランドに。</span></h1>
+      <div class="hero-sub">— 「会ってみたい」は、会う前に生まれる。</div>
+      <div class="hero-body">
+        旅も、一杯のラーメンも、小さな失敗も。<br/>
+        好きで続けてきたことが、あなたを語りはじめる。<br/>
+        飾らない言葉ほど、深く届く。<br/>
+        <b>遊びは、最上のプロフィールになる。</b>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/hero-brand.png" alt="BUILD YOUR BRAND" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"/>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>BRANDING IS PLAY</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>BUILD YOUR BRAND</span><span>✦</span><span>会う前から、物語ははじまっている</span><span>✦</span><span>信用資産を積み上げる</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+    <span>BRANDING IS PLAY</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>BUILD YOUR BRAND</span><span>✦</span><span>会う前から、物語ははじまっている</span><span>✦</span><span>信用資産を積み上げる</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about wrap" id="about">
+  <span class="chap">CHAPTER 01 — ABOUT</span>
+  <div class="about-grid">
+    <div>
+      <h2 class="h2">プレリアルを、<br/><span class="accent">楽しむ。</span></h2>
+      <div style="font-family:var(--jp);font-size:18px;color:var(--ink-3);margin-top:10px;font-weight:700">— 出会う前に、文脈を作る。</div>
+      <div class="readme" style="margin-top:24px">
+        <span class="label">はじめに読んでほしい</span>
+        <p>第一印象は、会った瞬間の10秒で決まる。<br/>——メラビアンの法則は、ずっと対面の心理学だった。</p>
+        <p>いま、その10秒は前倒しされている。<br/>プロフィールで。検索結果で。昨夜の投稿で。</p>
+        <p><span class="hl">人は、会う前にあなたと出会っている。</span><br/>それが、<span class="hl">プレリアル</span>。</p>
+        <p>この時間を楽しんでデザインできる人から、人生は面白くなっていく。</p>
+        <p><b>さあ、遊び始めよう。</b></p>
+      </div>
+    </div>
+    <div class="diagram">
+      <span class="label">CONCEPT DIAGRAM</span>
+      <svg viewBox="0 0 600 400" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arHead" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+            <polygon points="0 0,10 5,0 10" fill="#111"/>
+          </marker>
+          <marker id="arRed" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+            <polygon points="0 0,12 6,0 12" fill="#E8342A"/>
+          </marker>
+          <marker id="arGray" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+            <polygon points="0 0,10 5,0 10" fill="#9aa0a6"/>
+          </marker>
+        </defs>
+
+        <!-- ========== Layer 1: background zones ========== -->
+        <rect x="80" y="70" width="240" height="250" fill="#E8342A" opacity="0.06"/>
+        <rect x="320" y="70" width="220" height="250" fill="#FFD21F" opacity="0.10"/>
+
+        <!-- Zone divider (MEETING line) -->
+        <line x1="320" y1="70" x2="320" y2="320" stroke="#FFD21F" stroke-width="3" stroke-dasharray="6 4"/>
+
+        <!-- MEETING badge centered on the divider -->
+        <g transform="translate(320 56)">
+          <rect x="-44" y="-16" width="88" height="24" fill="#FFD21F" stroke="#111" stroke-width="2"/>
+          <text x="0" y="2" font-family="Bangers, sans-serif" font-size="15" text-anchor="middle" fill="#111" letter-spacing="2">MEETING</text>
+        </g>
+
+        <!-- Zone labels (no subtitle, simpler) -->
+        <text x="90" y="92" font-family="Bowlby One, sans-serif" font-size="12" letter-spacing="2" fill="#E8342A">PRE-REAL</text>
+        <text x="330" y="92" font-family="Bowlby One, sans-serif" font-size="12" letter-spacing="2" fill="#b58800">AFTER-REAL</text>
+
+        <!-- ========== Layer 2: axes ========== -->
+        <!-- Y axis -->
+        <line x1="80" y1="320" x2="80" y2="50" stroke="#111" stroke-width="2.5" marker-end="url(#arHead)"/>
+        <text x="80" y="40" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="13" text-anchor="middle">印象</text>
+
+        <!-- X axis -->
+        <line x1="80" y1="320" x2="560" y2="320" stroke="#111" stroke-width="2.5" marker-end="url(#arHead)"/>
+        <text x="568" y="324" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="13">時間</text>
+
+        <!-- Y tick labels -->
+        <g font-family="Bowlby One, sans-serif" font-size="10" fill="#999">
+          <text x="72" y="128" text-anchor="end">HIGH</text>
+          <text x="72" y="198" text-anchor="end">MID</text>
+          <text x="72" y="268" text-anchor="end">LOW</text>
+        </g>
+        <g stroke="#ddd" stroke-width="1" stroke-dasharray="2 4">
+          <line x1="80" y1="125" x2="540" y2="125"/>
+          <line x1="80" y1="195" x2="540" y2="195"/>
+          <line x1="80" y1="265" x2="540" y2="265"/>
+        </g>
+
+        <!-- ========== Layer 3: 従来モデル (flat gray with spike) ========== -->
+        <path d="M 80 300 L 315 300 L 325 140 L 540 130" fill="none" stroke="#9aa0a6" stroke-width="2.5" stroke-dasharray="8 5" stroke-linecap="round"/>
+
+        <!-- ========== Layer 4: PRE-REAL モデル (red rising curve) ========== -->
+        <path d="M 80 295 C 160 275, 230 220, 320 100 C 400 85, 470 70, 540 58" fill="none" stroke="#E8342A" stroke-width="5" stroke-linecap="round" marker-end="url(#arRed)"/>
+
+        <!-- Sample dots on PRE-REAL -->
+        <circle cx="150" cy="267" r="5" fill="#FFD21F" stroke="#111" stroke-width="2"/>
+        <circle cx="236" cy="198" r="5" fill="#FFD21F" stroke="#111" stroke-width="2"/>
+        <circle cx="320" cy="100" r="7" fill="#E8342A" stroke="#111" stroke-width="2.5"/>
+        <circle cx="440" cy="78" r="5" fill="#1E7FD6" stroke="#111" stroke-width="2"/>
+
+        <!-- ========== Layer 5: X tick labels ========== -->
+        <g font-family="Zen Maru Gothic, sans-serif" font-size="11" font-weight="700" fill="#555" text-anchor="middle">
+          <text x="150" y="340">SNS発見</text>
+          <text x="240" y="340">プロフ熟読</text>
+          <text x="320" y="340">対面</text>
+          <text x="440" y="340">継続接点</text>
+        </g>
+
+        <!-- ========== Layer 6: annotations ========== -->
+        <!-- PRE-REAL で印象が育つ (below the curve, clearly in pre-real zone) -->
+        <g transform="translate(100 235)">
+          <rect x="0" y="0" width="170" height="26" fill="#fff" stroke="#E8342A" stroke-width="2"/>
+          <text x="85" y="17" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="12" fill="#E8342A" text-anchor="middle">PRE-REAL で印象が育つ ↑</text>
+        </g>
+
+        <!-- そこから加速 (right side, clear of all lines) -->
+        <g transform="translate(400 155)">
+          <rect x="0" y="0" width="130" height="26" fill="#FFD21F" stroke="#111" stroke-width="2"/>
+          <text x="65" y="17" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="12" fill="#111" text-anchor="middle">そこから加速 ↗</text>
+          <!-- leader to curve -->
+          <line x1="30" y1="0" x2="30" y2="-75" stroke="#111" stroke-width="1" stroke-dasharray="3 3"/>
+        </g>
+
+        <!-- 従来モデル label (along the flat gray line) -->
+        <text x="160" y="293" font-family="Zen Maru Gothic, sans-serif" font-size="11" font-weight="700" fill="#888">従来：対面で9割決まる</text>
+
+        <!-- ========== Layer 7: legend ========== -->
+        <g transform="translate(380 378)" font-family="Zen Maru Gothic, sans-serif" font-size="11" font-weight="700">
+          <line x1="0" y1="-4" x2="24" y2="-4" stroke="#E8342A" stroke-width="4" stroke-linecap="round"/>
+          <text x="30" y="0" fill="#111">PRE-REAL モデル</text>
+          <line x1="0" y1="10" x2="24" y2="10" stroke="#9aa0a6" stroke-width="2.5" stroke-dasharray="5 3"/>
+          <text x="30" y="14" fill="#666">従来モデル</text>
+        </g>
+      </svg>
+      <div class="cap">fig.01 — プレリアルは「会う前」から印象を育て、対面で加速する</div>
+    </div>
+  </div>
+
+  <div class="keywords">
+    <div class="kw">
+      <span class="k">PRE-REAL</span>
+      <h3>第一印象は、対面の前にある。</h3>
+      <p>プロフィール、検索結果、最後の投稿。<br/>人はそれを読んでから、会いに来る。<br/>その文脈を意図してデザインするのが、ブランディング。</p>
+    </div>
+    <div class="kw blue">
+      <span class="k">TRUST</span>
+      <h3>信用は過去、信頼は一貫性。</h3>
+      <p>フォロワーの数は、追わない。<br/>届けたい人に深く届くことだけを、設計する。<br/>言ったことを、続ける。それだけが信頼に変わる。</p>
+    </div>
+  </div>
+
+  <div class="audience">
+    <span class="audience-label">こんな人に届けたい</span>
+    <div class="chips">
+      <span class="chip">営業マン</span>
+      <span class="chip">医師・士業</span>
+      <span class="chip">コーチ・コンサル</span>
+      <span class="chip">フリーランス</span>
+      <span class="chip">クリエイター</span>
+      <span class="chip">起業家</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker yellow">
+  <div class="ticker-track">
+    <span>BUILD YOUR BRAND</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>PRE-REAL</span><span>✦</span><span>BRANDING IS PLAY</span><span>✦</span><span>会う前から、文脈を作る</span><span>✦</span>
+    <span>BUILD YOUR BRAND</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>PRE-REAL</span><span>✦</span><span>BRANDING IS PLAY</span><span>✦</span><span>会う前から、文脈を作る</span><span>✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services wrap" id="services">
+  <span class="chap red">CHAPTER 02 — SERVICES</span>
+  <h2 class="h2">ブランドを、<br/>一緒に組み立てる。</h2>
+
+  <!-- Service 01 -->
+  <div class="service-row">
+    <div class="service-art red">
+      <img src="assets/service-sns.png" alt="DISCOVER" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"/>
+      <div style="position:absolute;bottom:14px;left:18px;font-family:var(--impact);font-size:28px;color:#fff;text-shadow:3px 3px 0 var(--line);z-index:3">DISCOVER</div>
+    </div>
+    <div class="service-card">
+      <div class="step">01</div>
+      <span class="eyebrow">STEP 01 · DISCOVER</span>
+      <h3>「当たり前」を、武器に変える。</h3>
+      <p class="lead">対話から、自分では気づけない強みを掘り起こす。</p>
+      <p>つい熱くなる話題、長く続けてきたこと、語りたくなる失敗。<br/>言葉にして並べ直すと、それは一枚の地図になる。<b>これから遊んでいくための、あなただけの地図</b>です。</p>
+      <ul>
+        <li>強みの言語化</li><li>価値観の棚卸し</li>
+        <li>届けたい人の設定</li><li>ブランドの中心を決める</li>
+      </ul>
+      <div class="benefit"><span class="bl">OUTPUT</span>ブランドコンセプトシート・核ワードマップ・ペルソナA4 1枚</div>
+    </div>
+  </div>
+
+  <!-- Service 02 — reversed -->
+  <div class="service-row rev">
+    <div class="service-card yellow">
+      <div class="step">02</div>
+      <span class="eyebrow">STEP 02 · DESIGN</span>
+      <h3>会う前と、会った後。</h3>
+      <p class="lead">「面白そう」で始まり、「もっと知りたい」で続く。</p>
+      <p>会う前には、期待をつくる。<br/>会った後には、余韻を残す。<br/>プロフィールから投稿の一行まで、<b>すべての接点を同じ温度で</b>整えます。</p>
+      <ul>
+        <li>ブランドページ制作</li><li>プロフィール最適化</li>
+        <li>投稿テンプレート</li><li>一貫性の運用ルール</li>
+      </ul>
+      <div class="benefit"><span class="bl">OUTPUT</span>ブランドLP・SNSヘッダー・プロフ画像・投稿テンプレ一式</div>
+    </div>
+    <div class="service-art yellow">
+      <img src="assets/service-brand.png" alt="DESIGN" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"/>
+      <div style="position:absolute;bottom:14px;left:18px;font-family:var(--impact);font-size:28px;color:var(--ink);text-shadow:3px 3px 0 #fff;z-index:3">DESIGN</div>
+    </div>
+  </div>
+
+  <!-- Service 03 -->
+  <div class="service-row">
+    <div class="service-art blue">
+      <img src="assets/service-mgmt.png" alt="RUN" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"/>
+      <div style="position:absolute;bottom:14px;left:18px;font-family:var(--impact);font-size:28px;color:#fff;text-shadow:3px 3px 0 var(--line);z-index:3">RUN</div>
+    </div>
+    <div class="service-card blue">
+      <div class="step">03</div>
+      <span class="eyebrow">STEP 03 · RUN</span>
+      <h3>続けることを、仕組みにする。</h3>
+      <p class="lead">発信は、才能ではなく設計で続く。</p>
+      <p>AIがニュースを拾い、noteとSNSの下書きまで用意する。あなたは自分の言葉をひとさじ足すだけ。月に一度、方向を確かめながら積み上げていきます。</p>
+      <ul>
+        <li>AI × 自動コンテンツ生成</li><li>note下書き自動作成</li>
+        <li>月1回の戦略打ち合わせ</li><li>ブランド方向性レポート</li>
+      </ul>
+      <div class="benefit"><span class="bl">OUTPUT</span>AI自動生成環境・伴走ミーティング（月1回）</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker red">
+  <div class="ticker-track">
+    <span>遊びを、ブランドに</span><span>✦</span><span>一貫性が信頼を作る</span><span>✦</span><span>開ける前が、一番</span><span>✦</span><span>PLAY BRANDING</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+    <span>遊びを、ブランドに</span><span>✦</span><span>一貫性が信頼を作る</span><span>✦</span><span>開ける前が、一番</span><span>✦</span><span>PLAY BRANDING</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy wrap" id="philosophy">
+  <span class="chap">CHAPTER 03 — PHILOSOPHY</span>
+  <h2 class="h2">ここだけは、<br/>読んでほしい。</h2>
+  <div style="font-family:var(--jp);font-size:16px;margin-top:14px;color:var(--ink-2);max-width:620px;line-height:1.9">
+    サービスの話より、先に。<br/>
+    PLAY BRANDINGが、静かに持ち続けている四つの考え。
+  </div>
+
+  <div class="phil-tablist" id="phil-tabs">
+    <div class="phil-tab on" data-i="0">
+      <div class="n">PHILOSOPHY 01</div>
+      <div class="t">PRE-REAL</div>
+    </div>
+    <div class="phil-tab" data-i="1">
+      <div class="n">PHILOSOPHY 02</div>
+      <div class="t">TIMES</div>
+    </div>
+    <div class="phil-tab" data-i="2">
+      <div class="n">PHILOSOPHY 03</div>
+      <div class="t">LOOP</div>
+    </div>
+    <div class="phil-tab" data-i="3">
+      <div class="n">PHILOSOPHY 04</div>
+      <div class="t">DISCIPLINE</div>
+    </div>
+  </div>
+  <div class="phil-body" id="phil-body"></div>
+</section>
+
+<!-- NOTE -->
+<section class="note wrap" id="note">
+  <span class="chap" style="background:var(--ink);color:var(--yellow)">NOTE — もっと深く知る</span>
+  <h2 class="h2">読み物で、<br/>遊び方を知る。</h2>
+  <div class="note-grid">
+    <div class="note-hero">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="tag yellow">note</span>
+        <span style="font-family:var(--impact);font-size:13px;letter-spacing:.2em;color:var(--ink-3)">ブランディングの哲学・実践法・事例</span>
+      </div>
+      <h3>サービスを選ぶ前に、<br/>読んでほしい記事。</h3>
+      <p style="font-family:var(--jp);font-size:15px;line-height:1.95">ブランディングの考え方、設計の裏側、信用資産の育て方。サービスの前に読んでほしい話を、noteに綴っています。</p>
+      <div style="margin-top:18px"><a class="btn lg" href="#" target="_blank">📝 noteを読んでみる →</a></div>
+    </div>
+    <div class="note-list">
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.04.12</div>
+        <h4>遊びを、ブランドに — 信用資産の育て方</h4>
+      </div>
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.03.28</div>
+        <h4>違えないって、いちばん強い — フォロワー数より大事なこと</h4>
+      </div>
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.03.14</div>
+        <h4>会う前に「文脈」を設計する3つの方法</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq wrap" id="faq">
+  <span class="chap yellow">FAQ — よくある質問</span>
+  <h2 class="h2">気になること、<br/>先に答えます。</h2>
+  <div class="faq-list" id="faq-list"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta wrap" id="contact">
+  <div class="cta-box">
+    <span class="chap">CHAPTER 04 — LET'S PLAY TOGETHER</span>
+    <h2>まず、遊びに来ませんか。<br/><span style="font-size:.6em;font-weight:400;opacity:.85">60分・無料・LINEで。</span></h2>
+    <p>資料も、準備も、いりません。<br/>最近おもしろかったこと。いつか会ってみたい人。<br/>いまハマっていること。そんな話から始めましょう。<br/><b>そこから、ぜんぶが始まります。</b></p>
+    <a class="line-btn" href="#">
+      <span class="ico">L</span>
+      LINEで遊びの話をする
+    </a>
+    <div class="line-sub">お問合せはLINE公式のみ。のんびりどうぞ。</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="stud">P</span><div>PLAY<small>BRANDING</small></div></div>
+        <p>ブランディングは、遊びだ。<br/>好きなことを、好きなまま資産に変える。<br/>違えないことだけを、静かに積む。</p>
+      </div>
+      <div>
+        <h5>NAVIGATION</h5>
+        <a href="#about">→ ABOUT</a>
+        <a href="#services">→ SERVICES</a>
+        <a href="#philosophy">→ PHILOSOPHY</a>
+        <a href="#note">→ NOTE</a>
+        <a href="#faq">→ FAQ</a>
+        <a href="#contact">→ CONTACT</a>
+      </div>
+      <div>
+        <h5>CONTACT & READ</h5>
+        <a href="#">→ LINE公式（相談窓口）</a>
+        <a href="#">→ note（ブログ）</a>
+      </div>
+      <div>
+        <h5>LEGAL / 会社情報</h5>
+        <a href="legal.html#company">→ 会社概要</a>
+        <a href="legal.html#tokushoho">→ 特定商取引法に基づく表記</a>
+        <a href="legal.html#privacy">→ プライバシーポリシー</a>
+        <a href="legal.html#personal">→ 個人情報の取扱いについて</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 PLAY BRANDING. All rights reserved.</div>
+      <div>MADE WITH ♥ & PLAY</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Tweaks Panel -->
+<div id="tweaks" style="display:none;position:fixed;bottom:80px;right:24px;z-index:90;background:#fff;border:3px solid #111;box-shadow:6px 6px 0 #111;padding:18px 20px;width:300px;font-family:'Zen Kaku Gothic New',sans-serif">
+  <div style="font-family:'Bowlby One',sans-serif;font-size:14px;letter-spacing:.15em;margin-bottom:12px">TWEAKS</div>
+  <label style="display:block;font-size:12px;font-weight:700;margin-bottom:6px">背景パターン</label>
+  <select id="tw-bg" style="width:100%;padding:8px;border:2px solid #111;font-family:inherit;margin-bottom:12px">
+    <option value="dots">ドット（現在）</option>
+    <option value="grid">グリッド罫目</option>
+    <option value="stripe">斜ストライプ</option>
+    <option value="paper">紙テクスチャ</option>
+    <option value="plain">プレーン（無地）</option>
+    <option value="white">白背景（無地）</option>
+  </select>
+  <label style="display:block;font-size:12px;font-weight:700;margin-bottom:6px">見出しフォント</label>
+  <select id="tw-display" style="width:100%;padding:8px;border:2px solid #111;font-family:inherit;margin-bottom:12px">
+    <option value="Dela Gothic One">Dela Gothic One（太・モダン）</option>
+    <option value="Zen Maru Gothic">Zen Maru Gothic（丸・やさしい）</option>
+    <option value="Kaisei Tokumin">Kaisei Tokumin（明朝・上品）</option>
+    <option value="Kaisei HarunoUmi">Kaisei HarunoUmi（明朝・遊び）</option>
+    <option value="Shippori Mincho B1">Shippori Mincho B1（明朝・王道）</option>
+    <option value="Yuji Syuku">Yuji Syuku（手書き風）</option>
+    <option value="Bowlby One">Bowlby One（英字太字）</option>
+  </select>
+  <label style="display:block;font-size:12px;font-weight:700;margin-bottom:6px">本文フォント</label>
+  <select id="tw-body" style="width:100%;padding:8px;border:2px solid #111;font-family:inherit;margin-bottom:12px">
+    <option value="Zen Kaku Gothic New">Zen Kaku Gothic New</option>
+    <option value="Zen Maru Gothic">Zen Maru Gothic（丸ゴ）</option>
+    <option value="Shippori Mincho B1">Shippori Mincho B1（明朝）</option>
+  </select>
+  <div style="font-size:11px;color:#666;line-height:1.6">見出し・本文を切り替えて比較できます。決まったらお知らせください。</div>
+</div>
+
+<!-- Floating LINE CTA -->
+<a href="#contact" class="line-float">
+  <span style="width:24px;height:24px;background:#fff;border-radius:6px;display:grid;place-items:center;color:#06C755;font-family:var(--impact);font-size:13px">L</span>
+  LINEで相談
+</a>
+
+<script>
+// Philosophy tabs
+const PHIL = [
+  {
+    label:'PHILOSOPHY 01 / PRE-REAL',
+    color:'#E8342A',
+    h:'メラビアンの法則を、会う前から使え。',
+    body:[
+      '対面の場で、視覚・聴覚・言語が印象の93%を決める——これがメラビアンの法則。',
+      'でも、プレリアルが機能していれば、対面前にすでに印象のベースラインが上がっている。',
+      '会った瞬間から、メラビアンが「加速」する。一歩リードした状態で、人生が始まる。'
+    ]
+  },
+  {
+    label:'PHILOSOPHY 02 / TIMES',
+    color:'#FFB800',
+    h:'オンラインも、オフラインも、真実だ。',
+    body:[
+      'かつてSNSは「もう一つの顔」だった。本当の自分は、会ってみないと分からなかった。',
+      'でも時代は変わった。SNSで見ているあなたと、会った時のあなたは、もう同じ人だ。',
+      'だからこそ、発信の一つひとつが人生になる。一つひとつが、あなた自身を作っていく。'
+    ]
+  },
+  {
+    label:'PHILOSOPHY 03 / LOOP',
+    color:'#1E7FD6',
+    h:'終わってからが、次の始まりだ。',
+    body:[
+      '対面が終わっても、ブランディングは止まらない。発信を続けることが、次の「つながり」になる。',
+      '会った時間が終わっても、あなたと相手は、ゆるく結ばれたまま。そのつながりが、次の誰かのプレリアルになる。',
+      'プレリアル → 対面 → つながり → 次のプレリアル。一度回り始めたら、止まらない永久機関だ。'
+    ]
+  },
+  {
+    label:'PHILOSOPHY 04 / DISCIPLINE',
+    color:'#2BB673',
+    h:'発信が、自分を育てる。',
+    body:[
+      '「信頼は一貫性が作る」——言ったことを、やり続けること。それは誰かのためだけじゃない。',
+      '自分を律する力にもなる。SNSで発信し続けることは、巡り巡って、自分自身を鍛えることだ。',
+      'ブランディングは、人生を豊かにする遊び道具である。'
+    ]
+  }
+];
+const philBody = document.getElementById('phil-body');
+const philTabs = document.querySelectorAll('.phil-tab');
+function renderPhil(i){
+  const d = PHIL[i];
+  philBody.innerHTML = `
+    <div>
+      <span class="label" style="color:${d.color}">${d.label}</span>
+      <h3>${d.h}</h3>
+      ${d.body.map(p=>`<p>${p}</p>`).join('')}
+    </div>
+    <div class="phil-side">
+      <span class="sl">関連する考え方</span>
+      <ul>
+        ${PHIL.map((p,j)=>j===i?'':`<li style="cursor:pointer" data-jump="${j}">→ ${p.label.split('/')[0].trim()}: ${p.h}</li>`).join('')}
+      </ul>
+    </div>`;
+  philBody.querySelectorAll('[data-jump]').forEach(el=>el.addEventListener('click',()=>select(Number(el.dataset.jump))));
+}
+function select(i){philTabs.forEach((t,k)=>t.classList.toggle('on',k===i));renderPhil(i);}
+philTabs.forEach((t,i)=>t.addEventListener('click',()=>select(i)));
+renderPhil(0);
+
+// FAQ
+const FAQ=[
+  {q:'対面での面談はありますか？',a:'すべてオンライン（Zoom）またはLINEで完結します。全国どこからでも受けられます。'},
+  {q:'他のブランディングサービスと何が違いますか？',a:'「会う前の印象」まで含めて設計する伴走型です。完全代行ではなく、あなた自身の言葉を一緒に育てます。'},
+  {q:'SNSが苦手でも大丈夫？',a:'むしろ苦手だった人ほど、ギャップが面白さの源泉になります。AIとアナログなサポートの二重伴走で「続く仕組み」を作ります。'},
+  {q:'まず何から始めれば？',a:'まずはオンラインで遊びの話をしましょう。'},
+  {q:'サービス期間はどれくらいですか？',a:'STEP 01〜03で平均3〜6ヶ月が目安です。その後は月1回の伴走で継続できます。'},
+  {q:'料金体系を教えてください',a:'一般的には月額19,800円から、コンサルティング内容によって変動します。詳細は無料相談（60分）であなたに合うプランを一緒に考えます。'},
+  {q:'問い合わせはどこから？',a:'すべてLINE公式アカウントで受け付けています。気軽にメッセージしてください。'},
+];
+const fl=document.getElementById('faq-list');
+FAQ.forEach((f,i)=>{
+  const el=document.createElement('div');
+  el.className='faq-item';
+  el.innerHTML=`<div class="faq-q"><span class="qm">Q</span>${f.q}<span class="plus">+</span></div><div class="faq-a"><p>${f.a}</p></div>`;
+  el.querySelector('.faq-q').addEventListener('click',()=>el.classList.toggle('open'));
+  fl.appendChild(el);
+});
+
+// ---- Tweaks / Edit mode ----
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "displayFont": "Kaisei Tokumin",
+  "bodyFont": "Zen Kaku Gothic New",
+  "bgPattern": "grid"
+}/*EDITMODE-END*/;
+const state = {...TWEAK_DEFAULTS};
+const twPanel = document.getElementById('tweaks');
+const twD = document.getElementById('tw-display');
+const twB = document.getElementById('tw-body');
+const twBg = document.getElementById('tw-bg');
+const BG_PATTERNS = {
+  dots: {
+    image: 'radial-gradient(rgba(0,0,0,.15) 1.2px, transparent 1.2px), radial-gradient(rgba(0,0,0,.08) 1px, transparent 1px)',
+    size: '22px 22px, 22px 22px',
+    position: '0 0, 11px 11px',
+    color: '#FFFBEA'
+  },
+  grid: {
+    image: 'linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px)',
+    size: '28px 28px, 28px 28px',
+    position: '0 0, 0 0',
+    color: '#FFFBEA'
+  },
+  stripe: {
+    image: 'repeating-linear-gradient(-45deg, rgba(0,0,0,.05) 0 1px, transparent 1px 14px)',
+    size: 'auto',
+    position: '0 0',
+    color: '#FFFBEA'
+  },
+  paper: {
+    image: 'radial-gradient(rgba(0,0,0,.05) 1px, transparent 1.2px), radial-gradient(rgba(0,0,0,.04) 1px, transparent 1.2px)',
+    size: '7px 7px, 13px 13px',
+    position: '0 0, 4px 4px',
+    color: '#FAF3E0'
+  },
+  plain: {
+    image: 'none',
+    size: 'auto',
+    position: '0 0',
+    color: '#FFFBEA'
+  },
+  white: {
+    image: 'none',
+    size: 'auto',
+    position: '0 0',
+    color: '#FFFFFF'
+  }
+};
+function applyBg(){
+  const p = BG_PATTERNS[state.bgPattern] || BG_PATTERNS.dots;
+  document.body.style.backgroundImage = p.image;
+  document.body.style.backgroundSize = p.size;
+  document.body.style.backgroundPosition = p.position;
+  document.body.style.backgroundColor = p.color;
+  document.documentElement.style.setProperty('--paper', p.color);
+  if(twBg) twBg.value = state.bgPattern;
+}
+function applyFonts(){
+  document.documentElement.style.setProperty('--display', `'${state.displayFont}','Zen Kaku Gothic New',serif`);
+  document.documentElement.style.setProperty('--jp', `'${state.bodyFont}','Hiragino Sans',sans-serif`);
+  document.documentElement.style.setProperty('--sans', `'${state.bodyFont}','Hiragino Sans',sans-serif`);
+  twD.value = state.displayFont;
+  twB.value = state.bodyFont;
+}
+applyFonts();
+applyBg();
+twD.addEventListener('change',()=>{state.displayFont=twD.value;applyFonts();window.parent.postMessage({type:'__edit_mode_set_keys',edits:{displayFont:state.displayFont}},'*')});
+twB.addEventListener('change',()=>{state.bodyFont=twB.value;applyFonts();window.parent.postMessage({type:'__edit_mode_set_keys',edits:{bodyFont:state.bodyFont}},'*')});
+twBg.addEventListener('change',()=>{state.bgPattern=twBg.value;applyBg();window.parent.postMessage({type:'__edit_mode_set_keys',edits:{bgPattern:state.bgPattern}},'*')});
+window.addEventListener('message',e=>{
+  if(!e.data||!e.data.type)return;
+  if(e.data.type==='__activate_edit_mode')twPanel.style.display='block';
+  if(e.data.type==='__deactivate_edit_mode')twPanel.style.display='none';
+});
+window.parent.postMessage({type:'__edit_mode_available'},'*');
+
+/* ── PRELOADER cleanup ── */
+(function(){
+  const pre=document.getElementById('preloader');
+  if(!pre) return;
+  setTimeout(()=>{document.body.classList.remove('preloading');pre.classList.add('done');},3400);
+})();
+
+/* ── TAP RIPPLE: stamp a LEGO stud wherever you click ── */
+(function(){
+  const GLYPHS=['!','★','P','★','+','●'];
+  const COLORS=[
+    {bg:'var(--yellow)',fg:'var(--ink)'},
+    {bg:'var(--red)',fg:'#fff'},
+    {bg:'var(--blue)',fg:'#fff'},
+    {bg:'#fff',fg:'var(--ink)'}
+  ];
+  let i=0;
+  window.addEventListener('pointerdown',(e)=>{
+    // Skip form fields
+    const t=e.target;
+    if(t.closest('input,textarea,select')) return;
+    const c=COLORS[i%COLORS.length];
+    const g=GLYPHS[i%GLYPHS.length];
+    i++;
+    const wrap=document.createElement('div');
+    wrap.className='tap-ripple';
+    wrap.style.left=e.clientX+'px';
+    wrap.style.top=e.clientY+'px';
+    wrap.innerHTML=`<div class="ring"></div><div class="stud" style="background:${c.bg};color:${c.fg}">${g}</div>`+
+      [[-30,-28],[28,-30],[-32,22],[26,26]].map(([x,y])=>`<div class="spark" style="--tx:${x}px;--ty:${y}px"></div>`).join('');
+    document.body.appendChild(wrap);
+    setTimeout(()=>wrap.remove(),600);
+  },{passive:true});
+})();
+</script>
+
+</body>
+</html>

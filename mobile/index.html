@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=375, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>PLAY BRANDING — mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=Kaisei+Tokumin:wght@700;800&family=Bangers&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111;--ink-2:#2b2b2b;--ink-3:#5c5c5c;
+  --paper:#FFFBEA;--paper-2:#FFF3B0;
+  --yellow:#FFD21F;--yellow-2:#FFB800;
+  --red:#E8342A;--blue:#1E7FD6;--navy:#0F1A2C;--line:#111;
+  --jp:'Zen Kaku Gothic New','Zen Maru Gothic','Hiragino Sans',sans-serif;
+  --display:'Kaisei Tokumin','Zen Kaku Gothic New',serif;
+  --impact:'Bowlby One','Dela Gothic One',sans-serif;
+  --pow:'Bangers','Bowlby One',sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;color:var(--ink);font-family:var(--jp);background:var(--paper);overflow-x:hidden}
+body{
+  background-image:
+    linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size:24px 24px,24px 24px;
+  width:375px;margin:0 auto;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px 10px;
+  background:var(--paper);border-bottom:3px solid var(--line);
+}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--impact);font-size:15px;letter-spacing:.04em}
+.logo .stud{
+  position:relative;display:inline-grid;place-items:center;
+  width:36px;height:36px;background:var(--yellow);border:3px solid var(--line);
+  box-shadow:2px 2px 0 var(--line);font-family:var(--impact);font-size:17px;
+  margin-top:6px;
+}
+.logo .stud::before,.logo .stud::after{
+  content:'';position:absolute;top:-5px;width:8px;height:5px;
+  background:var(--yellow);border:2px solid var(--line);border-bottom:none;
+  box-sizing:content-box;border-radius:2px 2px 0 0;
+}
+.logo .stud::before{left:4px}
+.logo .stud::after{right:4px}
+.logo small{display:block;font-family:var(--jp);font-size:9px;letter-spacing:.25em;font-weight:700;color:var(--ink-3);margin-top:-2px}
+
+/* Hamburger */
+.hb{
+  width:46px;height:40px;background:var(--yellow);border:3px solid var(--line);
+  box-shadow:3px 3px 0 var(--line);display:grid;place-items:center;
+  cursor:pointer;position:relative;flex-shrink:0;
+}
+.hb span{
+  display:block;width:22px;height:3px;background:var(--ink);
+  position:absolute;left:50%;transform:translateX(-50%);
+  transition:transform .3s, top .3s, opacity .2s;
+}
+.hb span:nth-child(1){top:10px}
+.hb span:nth-child(2){top:18px}
+.hb span:nth-child(3){top:26px}
+.hb.open span:nth-child(1){top:18px;transform:translateX(-50%) rotate(45deg)}
+.hb.open span:nth-child(2){opacity:0}
+.hb.open span:nth-child(3){top:18px;transform:translateX(-50%) rotate(-45deg)}
+
+/* Menu overlay */
+.menu-overlay{
+  position:fixed;inset:0;z-index:45;background:var(--paper);
+  transform:translateY(-100%);transition:transform .35s cubic-bezier(.6,0,.2,1);
+  padding:80px 24px 40px;display:flex;flex-direction:column;gap:14px;
+}
+.menu-overlay.open{transform:translateY(0)}
+.menu-overlay a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px;border:3px solid var(--line);box-shadow:4px 4px 0 var(--line);
+  font-family:var(--impact);font-size:20px;letter-spacing:.06em;
+  transition:transform .15s,box-shadow .15s;
+}
+.menu-overlay a:nth-child(1){background:#FFE9A8}
+.menu-overlay a:nth-child(2){background:#FFC2BE}
+.menu-overlay a:nth-child(3){background:#BEE3FF}
+.menu-overlay a:nth-child(4){background:#D4F0C4}
+.menu-overlay a:nth-child(5){background:#E9DCFF}
+.menu-overlay a:nth-child(6){background:var(--yellow);color:var(--ink)}
+.menu-overlay a .arr{font-size:22px}
+.menu-overlay a:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--line)}
+.menu-overlay .jp{display:block;font-family:var(--jp);font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--ink-3);margin-top:2px}
+.menu-overlay .label-group{display:flex;flex-direction:column;gap:2px}
+
+/* ── COMMON ── */
+.wrap{padding:0 18px}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 16px;border:3px solid var(--line);
+  background:var(--yellow);font-family:var(--impact);letter-spacing:.05em;
+  box-shadow:3px 3px 0 var(--line);font-size:13px;
+}
+.btn.lg{padding:14px 22px;font-size:16px;box-shadow:4px 4px 0 var(--line)}
+.btn.red{background:var(--red);color:#fff}
+
+.chap{
+  display:inline-block;background:var(--ink);color:var(--yellow);
+  font-family:var(--impact);padding:6px 12px;letter-spacing:.15em;
+  font-size:11px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);
+}
+.chap.red{background:var(--red);color:#fff}
+.chap.yellow{background:var(--yellow);color:var(--ink)}
+
+.h2{font-family:var(--display);font-weight:800;font-size:32px;line-height:1.35;margin:16px 0 0;letter-spacing:.02em;font-feature-settings:"palt"}
+.h2 .accent{color:var(--red)}
+.h1,.h2,.cta-box h2,.service-card h3,.phil-inner h4,.note-hero h3{text-wrap:pretty}
+.sub{font-family:var(--jp);font-size:14px;color:var(--ink-3);margin-top:8px;font-weight:700}
+
+/* ── HERO ── */
+.hero{padding:26px 0 10px}
+.hero-eyebrow{
+  background:var(--red);color:#fff;font-family:var(--impact);
+  display:inline-block;padding:6px 12px;border:3px solid var(--line);
+  box-shadow:3px 3px 0 var(--line);font-size:11px;letter-spacing:.1em;margin-bottom:16px;
+}
+.h1{
+  font-family:var(--display);font-weight:800;font-size:46px;line-height:1.18;
+  letter-spacing:.02em;margin:0;
+  font-feature-settings:"palt";
+  text-shadow:3px 3px 0 rgba(0,0,0,.06);
+}
+.h1 .accent{color:var(--red);position:relative;display:inline-block}
+.h1 .accent::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;height:6px;
+  background:var(--yellow);z-index:-1;
+}
+.hero-sub{
+  display:inline-block;margin-top:14px;background:var(--yellow);
+  border:3px solid var(--line);padding:8px 12px;box-shadow:3px 3px 0 var(--line);
+  font-family:var(--jp);font-weight:900;font-size:14px;
+}
+.hero-body{
+  margin-top:16px;background:#fff;border:3px solid var(--line);
+  padding:14px 16px;box-shadow:3px 3px 0 var(--line);
+  font-family:var(--jp);font-size:13px;line-height:1.9;
+}
+.hero-body b{color:var(--red);font-weight:900}
+.hero-art{
+  margin-top:20px;border:3px solid var(--line);background:#FFF8E1;
+  box-shadow:5px 5px 0 var(--line);aspect-ratio:4/3;overflow:hidden;position:relative;
+}
+.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* ── TICKER ── */
+.ticker{
+  overflow:hidden;border-top:3px solid var(--line);border-bottom:3px solid var(--line);
+  background:var(--ink);color:var(--yellow);padding:12px 0;margin:22px 0;
+  font-family:'Dela Gothic One',sans-serif;font-size:15px;letter-spacing:.02em;
+  white-space:nowrap;line-height:1;
+}
+.ticker-track{display:inline-flex;animation:scroll 26s linear infinite;gap:32px;padding-left:32px}
+.ticker.yellow{background:var(--yellow);color:var(--ink)}
+.ticker.red{background:var(--red);color:#fff}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── ABOUT ── */
+.about{padding:14px 0 20px}
+.readme{
+  background:#fff;border:3px dashed var(--line);padding:18px;
+  box-shadow:4px 4px 0 var(--line);margin-top:18px;
+}
+.readme .label{
+  font-family:var(--impact);font-size:12px;letter-spacing:.2em;
+  margin-bottom:8px;display:block;
+}
+.readme p{font-family:var(--jp);font-size:14px;line-height:2;margin:0 0 12px}
+.readme .hl{background:var(--yellow);padding:2px 6px;font-weight:900}
+
+.diagram{
+  background:#fff;border:3px solid var(--line);padding:14px 8px 12px;
+  box-shadow:4px 4px 0 var(--line);margin:20px -14px 0;
+}
+.diagram .label{font-family:var(--impact);font-size:12px;letter-spacing:.2em;padding:0 4px}
+.diagram svg{width:100%;height:auto;margin-top:10px;display:block}
+.diagram .cap{font-family:var(--jp);font-size:11px;color:var(--ink-3);text-align:center;margin-top:8px;line-height:1.5;padding:0 6px}
+
+.keywords{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.kw{
+  background:var(--navy);color:#fff;border:3px solid var(--line);
+  padding:18px;box-shadow:5px 5px 0 var(--line);
+}
+.kw .k{
+  display:inline-block;padding:3px 10px;font-family:var(--impact);
+  font-size:11px;letter-spacing:.2em;background:var(--red);border:2px solid var(--line);
+}
+.kw.blue .k{background:var(--blue)}
+.kw h3{font-family:var(--jp);font-weight:900;font-size:18px;margin:10px 0 8px;line-height:1.35}
+.kw p{font-family:var(--jp);font-size:12.5px;line-height:1.85;margin:0;color:rgba(255,255,255,.9)}
+
+.audience{margin-top:22px}
+.audience-label{font-family:var(--impact);font-size:11px;letter-spacing:.2em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{
+  display:inline-block;background:#fff;border:3px solid var(--line);
+  padding:6px 12px;font-family:var(--jp);font-weight:700;font-size:12px;
+  box-shadow:2px 2px 0 var(--line);
+}
+.chip:nth-child(odd){background:var(--yellow)}
+
+/* ── SERVICES ── */
+.services{padding:14px 0 20px}
+.service-card{
+  background:#FFFBEA;border:3px solid var(--line);padding:22px 18px;
+  box-shadow:5px 5px 0 var(--line);position:relative;margin-top:28px;
+}
+.service-card .step{
+  position:absolute;top:-18px;right:18px;width:40px;height:40px;
+  background:var(--ink);color:var(--yellow);border:3px solid var(--line);
+  display:grid;place-items:center;font-family:var(--impact);font-size:17px;
+  box-shadow:2px 2px 0 var(--line);
+}
+.service-art{
+  position:relative;border:3px solid var(--line);background:#FFF8E1;
+  box-shadow:5px 5px 0 var(--line);aspect-ratio:4/3;overflow:hidden;margin-top:18px;
+}
+.service-art.red{background:var(--red)}
+.service-art.yellow{background:var(--yellow)}
+.service-art.blue{background:var(--blue)}
+.service-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.service-art .tag-label{
+  position:absolute;bottom:10px;left:12px;font-family:var(--impact);
+  font-size:22px;color:#fff;text-shadow:2px 2px 0 var(--line);z-index:3;
+}
+.service-art.yellow .tag-label{color:var(--ink);text-shadow:2px 2px 0 #fff}
+.services-banner{
+  margin-top:22px;border:3px solid var(--line);
+  box-shadow:5px 5px 0 var(--line);overflow:hidden;background:#FFFBEA;
+}
+.services-banner img{width:100%;display:block}
+.service-card .eyebrow{font-family:var(--impact);font-size:11px;letter-spacing:.25em;color:var(--red)}
+.service-card.yellow .eyebrow{color:var(--yellow-2)}
+.service-card.blue .eyebrow{color:var(--blue)}
+.service-card h3{font-family:var(--display);font-weight:800;font-size:21px;margin:10px 0 8px;line-height:1.45;letter-spacing:.02em;font-feature-settings:"palt"}
+.service-card .lead{font-family:var(--jp);font-weight:700;font-size:14px;margin:0 0 10px;line-height:1.55}
+.service-card p{font-family:var(--jp);font-size:13px;line-height:1.9;margin:0 0 12px}
+.service-card ul{
+  display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0 0;margin:0;
+  list-style:none;font-family:var(--jp);font-size:12.5px;font-weight:700;
+  border-top:2px dashed var(--line);
+}
+.service-card li{padding:2px 0}
+.service-card li::before{content:'✓ ';color:var(--red);font-weight:900}
+.service-card .benefit{
+  margin-top:14px;padding:12px 14px;background:var(--ink);color:var(--yellow);
+  border:3px solid var(--line);font-family:var(--jp);font-size:12.5px;font-weight:700;
+  line-height:1.7;box-shadow:2px 2px 0 var(--line);
+}
+.service-card .benefit b{color:#fff}
+.service-card .benefit .bl{
+  display:inline-block;font-family:var(--impact);font-size:10px;letter-spacing:.2em;
+  background:var(--red);color:#fff;padding:2px 8px;margin-right:8px;
+  border:2px solid var(--line);vertical-align:middle;
+}
+
+/* ── PHILOSOPHY (accordion on mobile) ── */
+.philosophy{padding:14px 0 20px}
+.phil-list{margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.phil-item{
+  background:#fff;border:3px solid var(--line);box-shadow:4px 4px 0 var(--line);
+  overflow:hidden;
+}
+.phil-head{
+  padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:14px;
+  transition:background .15s;
+}
+.phil-head .n{font-family:var(--impact);font-size:10px;letter-spacing:.2em;color:var(--ink-3)}
+.phil-head .t{font-family:var(--impact);font-size:22px;letter-spacing:.04em;line-height:1;margin-top:4px}
+.phil-head .plus{margin-left:auto;font-family:var(--impact);font-size:22px;transition:transform .2s;color:var(--ink-3)}
+.phil-item.open .phil-head{background:var(--yellow)}
+.phil-item.open .phil-head .plus{transform:rotate(45deg)}
+.phil-body{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+  border-top:0 solid var(--line);
+}
+.phil-item.open .phil-body{max-height:1200px;border-top:3px solid var(--line)}
+.phil-inner{padding:16px 18px}
+.phil-inner .lbl{font-family:var(--impact);font-size:11px;letter-spacing:.2em}
+.phil-inner h4{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.5;margin:8px 0 10px;letter-spacing:.02em;font-feature-settings:"palt"}
+.phil-inner p{font-family:var(--jp);font-size:13px;line-height:1.95;margin:0 0 10px}
+
+/* ── NOTE ── */
+.note{padding:14px 0 20px}
+.note-hero{
+  background:#fff;border:3px solid var(--line);padding:18px;
+  box-shadow:4px 4px 0 var(--line);margin-top:18px;
+}
+.note-hero .tag{
+  display:inline-block;padding:4px 10px;border:2px solid var(--line);
+  background:var(--yellow);font-family:var(--impact);font-size:11px;letter-spacing:.1em;
+}
+.note-hero h3{font-family:var(--display);font-weight:800;font-size:21px;margin:12px 0 10px;line-height:1.45;letter-spacing:.02em;font-feature-settings:"palt"}
+.note-hero p{font-family:var(--jp);font-size:13px;line-height:1.85;margin:0 0 14px}
+.note-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.note-item{
+  background:#fff;border:3px solid var(--line);padding:13px 15px;
+  box-shadow:3px 3px 0 var(--line);
+}
+.note-item .meta{font-family:var(--impact);font-size:10px;letter-spacing:.2em;color:var(--ink-3)}
+.note-item h4{font-family:var(--jp);font-weight:900;font-size:14px;margin:4px 0 0;line-height:1.5}
+
+/* ── FAQ ── */
+.faq{padding:14px 0 20px}
+.faq-list{margin-top:22px;display:flex;flex-direction:column;gap:8px}
+.faq-item{
+  background:#fff;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);
+  overflow:hidden;transition:box-shadow .25s, transform .25s;
+}
+.faq-item.open{box-shadow:5px 5px 0 var(--line);transform:translate(-1px,-1px)}
+.faq-q{
+  padding:10px 12px;cursor:pointer;display:flex;gap:10px;align-items:center;
+  font-family:var(--jp);font-weight:700;font-size:13px;line-height:1.35;
+}
+.faq-q .qm{
+  width:24px;height:24px;flex-shrink:0;background:var(--red);color:#fff;
+  border:2px solid var(--line);display:grid;place-items:center;
+  font-family:var(--impact);font-size:12px;
+}
+.faq-q .plus{
+  margin-left:auto;width:22px;height:22px;flex-shrink:0;
+  display:grid;place-items:center;background:var(--yellow);
+  border:2px solid var(--line);font-family:var(--impact);font-size:14px;
+  transition:transform .35s cubic-bezier(.6,0,.2,1),background .2s;
+}
+.faq-item.open .plus{transform:rotate(135deg);background:var(--red);color:#fff}
+.faq-a{
+  display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .38s cubic-bezier(.6,0,.2,1);
+}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a > div{overflow:hidden;min-height:0}
+.faq-a .inner{
+  padding:0 14px 14px 46px;
+  opacity:0;transform:translateY(-6px);
+  transition:opacity .3s .05s ease, transform .35s .05s cubic-bezier(.6,0,.2,1);
+}
+.faq-item.open .faq-a .inner{opacity:1;transform:none}
+.faq-a p{font-family:var(--jp);font-size:12.5px;line-height:1.8;margin:0}
+
+/* ── CTA ── */
+.cta{padding:18px 0}
+.cta-box{
+  background:var(--navy);color:#fff;border:3px solid var(--line);
+  box-shadow:6px 6px 0 var(--line);padding:28px 22px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;
+  background:conic-gradient(from 0deg, var(--yellow) 0 10%, transparent 10% 20%, var(--yellow) 20% 30%, transparent 30% 40%, var(--yellow) 40% 50%, transparent 50% 60%, var(--yellow) 60% 70%, transparent 70% 80%, var(--yellow) 80% 90%, transparent 90% 100%);
+  opacity:.15;border-radius:50%;
+}
+.cta-box .chap{background:var(--yellow);color:var(--ink)}
+.cta-box h2{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.4;margin:14px 0 10px;color:#fff;letter-spacing:.02em;font-feature-settings:"palt"}
+.cta-box h2 small{display:block;font-size:13px;font-weight:400;opacity:.85;margin-top:4px}
+.cta-box p{font-family:var(--jp);font-size:13px;line-height:1.85;color:rgba(255,255,255,.8);margin:0 0 18px}
+.cta-box b{color:#fff}
+.line-btn{
+  display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;
+  padding:14px 22px;border:3px solid var(--line);box-shadow:4px 4px 0 var(--line);
+  font-family:var(--impact);font-size:15px;letter-spacing:.04em;
+}
+.line-btn .ico{
+  width:24px;height:24px;background:#fff;border-radius:6px;display:grid;place-items:center;
+  color:#06C755;font-family:var(--impact);font-size:14px;
+}
+.line-sub{margin-top:10px;font-family:var(--jp);font-size:11px;color:rgba(255,255,255,.7)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:#fff;padding:30px 18px 16px;margin-top:20px}
+footer h5{font-family:var(--impact);font-size:11px;letter-spacing:.2em;color:var(--yellow);margin:18px 0 8px}
+footer a{display:block;font-family:var(--jp);font-size:12px;line-height:2;color:rgba(255,255,255,.8)}
+footer p{font-family:var(--jp);font-size:11.5px;line-height:1.85;color:rgba(255,255,255,.7);margin:10px 0 0}
+.footer-bottom{
+  margin-top:24px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);
+  font-family:var(--impact);font-size:9.5px;letter-spacing:.2em;color:rgba(255,255,255,.5);
+  display:flex;justify-content:space-between;
+}
+
+/* ── FLOATING LINE ── */
+.line-float{
+  position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:80;
+  display:flex;align-items:center;gap:8px;background:#06C755;color:#fff;
+  padding:11px 18px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);
+  font-family:var(--impact);font-size:13px;letter-spacing:.05em;
+  transition:transform .2s, opacity .2s;
+}
+.line-float.hidden{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(20px)}
+.line-float .i{width:20px;height:20px;background:#fff;border-radius:5px;display:grid;place-items:center;color:#06C755;font-family:var(--impact);font-size:11px}
+
+/* ── REVEAL (scroll-in) ── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── TAP RIPPLE (LEGO stud) ── */
+.tap-ripple{
+  position:fixed;pointer-events:none;z-index:9999;
+  width:48px;height:48px;margin:-24px 0 0 -24px;
+  animation:tapPop .55s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.tap-ripple .stud{
+  position:relative;width:100%;height:100%;
+  background:var(--yellow);border:3px solid var(--line);
+  box-shadow:3px 3px 0 var(--line);
+  display:grid;place-items:center;
+  font-family:var(--impact);font-size:22px;color:var(--ink);
+  border-radius:4px;
+}
+.tap-ripple .stud::before,.tap-ripple .stud::after{
+  content:'';position:absolute;top:-7px;
+  width:10px;height:7px;background:var(--yellow);
+  border:3px solid var(--line);border-bottom:none;
+  box-sizing:content-box;border-radius:2px 2px 0 0;
+}
+.tap-ripple .stud::before{left:5px}
+.tap-ripple .stud::after{right:5px}
+.tap-ripple .ring{
+  position:absolute;inset:-8px;border:3px solid var(--red);
+  border-radius:50%;opacity:0;
+  animation:tapRing .55s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.tap-ripple .spark{
+  position:absolute;left:50%;top:50%;width:6px;height:6px;
+  background:var(--yellow);border:2px solid var(--line);
+  margin:-4px 0 0 -4px;opacity:0;
+  animation:tapSpark .5s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes tapPop{
+  0%{transform:scale(.2) rotate(-20deg);opacity:0}
+  40%{transform:scale(1.15) rotate(6deg);opacity:1}
+  70%{transform:scale(1) rotate(0);opacity:1}
+  100%{transform:scale(.9) rotate(0);opacity:0}
+}
+@keyframes tapRing{
+  0%{transform:scale(.4);opacity:0}
+  40%{transform:scale(1);opacity:.9}
+  100%{transform:scale(1.8);opacity:0}
+}
+@keyframes tapSpark{
+  0%{transform:translate(0,0) scale(0);opacity:0}
+  35%{opacity:1}
+  100%{transform:translate(var(--tx,20px),var(--ty,-20px)) scale(1);opacity:0}
+}
+
+/* ── PRELOADER ── */
+.preloader{
+  position:fixed;inset:0;z-index:99999;background:var(--navy);
+  background-image:radial-gradient(rgba(255,255,255,.12) 1.2px, transparent 1.2px);
+  background-size:16px 16px;
+  display:grid;place-items:center;overflow:hidden;
+  animation:preloadOut .6s cubic-bezier(.7,0,.3,1) 2.5s forwards;
+}
+.preloader.done{display:none!important}
+.preloader-inner{text-align:center;transform:translateY(-6px);padding:0 20px}
+.preloader .bricks{display:flex;gap:7px;justify-content:center;margin-bottom:20px;height:32px}
+.preloader .brick{
+  position:relative;width:26px;height:20px;border:2.5px solid #000;
+  box-shadow:2px 2px 0 #000;opacity:0;
+  transform:translateY(-100px) rotate(-10deg);
+  animation:brickDrop .38s cubic-bezier(.3,1.4,.4,1) forwards;
+}
+.preloader .brick::before,.preloader .brick::after{
+  content:'';position:absolute;top:-6px;width:6px;height:6px;
+  background:inherit;border:2.5px solid #000;border-bottom:none;
+  box-sizing:content-box;
+}
+.preloader .brick::before{left:2px}
+.preloader .brick::after{right:2px}
+.preloader .brick:nth-child(1){background:var(--yellow);animation-delay:.05s}
+.preloader .brick:nth-child(2){background:var(--red);animation-delay:.18s}
+.preloader .brick:nth-child(3){background:var(--blue);animation-delay:.31s}
+.preloader .brick:nth-child(4){background:#2BB673;animation-delay:.44s}
+.preloader .brick:nth-child(5){background:#F39200;animation-delay:.57s}
+.preloader .brick:nth-child(6){background:var(--yellow);animation-delay:.70s}
+.preloader .brick:nth-child(7){background:var(--red);animation-delay:.83s}
+.preloader .pbTitle{
+  font-family:var(--impact);font-size:40px;color:var(--yellow);
+  letter-spacing:.02em;line-height:1;text-shadow:3px 3px 0 rgba(0,0,0,.35);
+  opacity:0;transform:scale(.85);
+  animation:pbPop .55s cubic-bezier(.2,1.6,.4,1) 1.05s forwards;
+}
+.preloader .pbSub{
+  font-family:var(--jp);font-weight:700;color:#fff;opacity:0;
+  font-size:11px;letter-spacing:.25em;margin-top:10px;
+  animation:pbFade .5s ease 1.5s forwards;
+}
+.preloader .pbBar{
+  width:140px;height:5px;margin:16px auto 0;border:2px solid #fff;
+  background:rgba(255,255,255,.08);position:relative;opacity:0;
+  animation:pbFade .4s ease 1.7s forwards;
+}
+.preloader .pbBar::after{
+  content:'';position:absolute;inset:0;background:var(--yellow);
+  transform-origin:left;transform:scaleX(0);
+  animation:pbFill .85s cubic-bezier(.6,.1,.4,1) 1.75s forwards;
+}
+@keyframes brickDrop{
+  0%{opacity:0;transform:translateY(-120px) rotate(-15deg)}
+  60%{opacity:1;transform:translateY(6px) rotate(3deg)}
+  100%{opacity:1;transform:translateY(0) rotate(0)}
+}
+@keyframes pbPop{to{opacity:1;transform:scale(1)}}
+@keyframes pbFade{to{opacity:1}}
+@keyframes pbFill{to{transform:scaleX(1)}}
+@keyframes preloadOut{to{opacity:0;visibility:hidden}}
+body.preloading{overflow:hidden}
+
+</style>
+</head>
+<body class="preloading">
+
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="bricks">
+      <div class="brick"></div><div class="brick"></div><div class="brick"></div>
+      <div class="brick"></div><div class="brick"></div><div class="brick"></div>
+      <div class="brick"></div>
+    </div>
+    <div class="pbTitle">PLAY BRANDING</div>
+    <div class="pbSub">ブランディングは遊びだ。</div>
+    <div class="pbBar"></div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="logo">
+    <span class="stud">P</span>
+    <div>PLAY<small>BRANDING</small></div>
+  </div>
+  <div class="hb" id="hb"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Menu overlay -->
+<div class="menu-overlay" id="menu">
+  <a href="#about"><span class="label-group"><span>ABOUT</span><span class="jp">プレリアルとは</span></span><span class="arr">→</span></a>
+  <a href="#services"><span class="label-group"><span>SERVICES</span><span class="jp">3つのサービス</span></span><span class="arr">→</span></a>
+  <a href="#philosophy"><span class="label-group"><span>PHILOSOPHY</span><span class="jp">大切にしている考え</span></span><span class="arr">→</span></a>
+  <a href="#note"><span class="label-group"><span>NOTE</span><span class="jp">読み物</span></span><span class="arr">→</span></a>
+  <a href="#faq"><span class="label-group"><span>FAQ</span><span class="jp">よくある質問</span></span><span class="arr">→</span></a>
+  <a href="#contact"><span class="label-group"><span>LET'S BUILD!</span><span class="jp">LINEで相談する</span></span><span class="arr">→</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <span class="hero-eyebrow rv">PLAY BRANDING × PRE-REAL</span>
+  <h1 class="h1 rv">遊びを、<br/><span class="accent">ブランドに。</span></h1>
+  <div class="hero-sub rv">— 「会ってみたい」は、会う前に生まれる。</div>
+  <div class="hero-body rv">
+    旅も、一杯のラーメンも、小さな失敗も。<br/>
+    好きで続けてきたことが、あなたを語りはじめる。<br/>
+    飾らない言葉ほど、深く届く。<br/>
+    <b>遊びは、最上のプロフィールになる。</b>
+  </div>
+  <div class="hero-art rv">
+    <img src="../assets/hero-brand.png" alt="BUILD YOUR BRAND"/>
+  </div>
+  <div class="hero-cta rv">
+    <a class="btn red lg" href="#contact">LINEで相談する →</a>
+  </div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>BRANDING IS PLAY</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>BUILD YOUR BRAND</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+    <span>BRANDING IS PLAY</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>BUILD YOUR BRAND</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about wrap" id="about">
+  <span class="chap rv">CHAPTER 01 — ABOUT</span>
+  <h2 class="h2 rv">プレリアルを、<br/><span class="accent">楽しむ。</span></h2>
+  <div class="sub rv">— 出会う前に、文脈を作る。</div>
+  <div class="readme rv">
+    <span class="label">はじめに読んでほしい</span>
+    <p>第一印象は、会った瞬間の10秒で決まる。——メラビアンの法則は、ずっと対面の心理学だった。</p>
+    <p>いま、その10秒は前倒しされている。<br/>プロフィールで。検索結果で。昨夜の投稿で。</p>
+    <p><span class="hl">人は、会う前にあなたと出会っている。</span>それが、<span class="hl">プレリアル</span>。</p>
+    <p>この時間を楽しんでデザインできる人から、人生は面白くなっていく。</p>
+    <p><b>さあ、遊び始めよう。</b></p>
+  </div>
+
+  <div class="diagram rv">
+    <span class="label">CONCEPT DIAGRAM</span>
+    <svg viewBox="-10 0 620 450" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="m-ar" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto">
+          <polygon points="0 0,10 5,0 10" fill="#111"/>
+        </marker>
+        <marker id="m-arR" markerWidth="12" markerHeight="12" refX="8" refY="6" orient="auto">
+          <polygon points="0 0,12 6,0 12" fill="#E8342A"/>
+        </marker>
+      </defs>
+      <rect x="70" y="60" width="250" height="260" fill="#E8342A" opacity="0.06"/>
+      <rect x="320" y="60" width="230" height="260" fill="#FFD21F" opacity="0.10"/>
+      <line x1="320" y1="60" x2="320" y2="320" stroke="#FFD21F" stroke-width="3" stroke-dasharray="6 4"/>
+      <g transform="translate(320 46)">
+        <rect x="-56" y="-18" width="112" height="28" fill="#FFD21F" stroke="#111" stroke-width="2.5"/>
+        <text x="0" y="4" font-family="Bangers, sans-serif" font-size="19" text-anchor="middle" fill="#111" letter-spacing="2">MEETING</text>
+      </g>
+      <text x="80" y="86" font-family="Bowlby One, sans-serif" font-size="18" letter-spacing="2" fill="#E8342A">PRE-REAL</text>
+      <text x="330" y="86" font-family="Bowlby One, sans-serif" font-size="18" letter-spacing="2" fill="#b58800">AFTER-REAL</text>
+      <line x1="70" y1="320" x2="70" y2="36" stroke="#111" stroke-width="3" marker-end="url(#m-ar)"/>
+      <text x="70" y="24" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="19" text-anchor="middle">印象</text>
+      <line x1="70" y1="320" x2="580" y2="320" stroke="#111" stroke-width="3" marker-end="url(#m-ar)"/>
+      <text x="570" y="308" font-family="Zen Maru Gothic, sans-serif" font-weight="900" font-size="19" text-anchor="end">時間</text>
+      <g stroke="#ddd" stroke-width="1.2" stroke-dasharray="2 4">
+        <line x1="70" y1="125" x2="550" y2="125"/>
+        <line x1="70" y1="195" x2="550" y2="195"/>
+        <line x1="70" y1="265" x2="550" y2="265"/>
+      </g>
+      <path d="M 70 300 L 315 300 L 325 140 L 550 130" fill="none" stroke="#9aa0a6" stroke-width="3" stroke-dasharray="8 5" stroke-linecap="round"/>
+      <path class="curve" d="M 70 295 C 160 275, 230 220, 320 100 C 400 85, 470 70, 550 58" fill="none" stroke="#E8342A" stroke-width="6" stroke-linecap="round" marker-end="url(#m-arR)"/>
+      <circle cx="150" cy="267" r="8" fill="#FFD21F" stroke="#111" stroke-width="2.5"/>
+      <circle cx="236" cy="198" r="8" fill="#FFD21F" stroke="#111" stroke-width="2.5"/>
+      <circle cx="320" cy="100" r="10" fill="#E8342A" stroke="#111" stroke-width="3"/>
+      <circle cx="440" cy="78" r="8" fill="#1E7FD6" stroke="#111" stroke-width="2.5"/>
+      <g font-family="Zen Maru Gothic, sans-serif" font-size="18" font-weight="700" fill="#444" text-anchor="middle">
+        <text x="150" y="350">SNS発見</text>
+        <text x="240" y="350">プロフ熟読</text>
+        <text x="320" y="350">対面</text>
+        <text x="440" y="350">継続接点</text>
+      </g>
+      <g transform="translate(80 400)" font-family="Zen Maru Gothic, sans-serif" font-size="18" font-weight="700">
+        <line x1="0" y1="-6" x2="34" y2="-6" stroke="#E8342A" stroke-width="6" stroke-linecap="round"/>
+        <text x="42" y="0" fill="#111">PRE-REAL</text>
+        <line x1="200" y1="-6" x2="234" y2="-6" stroke="#9aa0a6" stroke-width="3" stroke-dasharray="5 3"/>
+        <text x="242" y="0" fill="#666">従来モデル</text>
+      </g>
+    </svg>
+    <div class="cap">fig.01 — プレリアルは会う前から印象を育て、対面で加速する</div>
+  </div>
+
+  <div class="keywords">
+    <div class="kw rv">
+      <span class="k">PRE-REAL</span>
+      <h3>第一印象は、対面の前にある。</h3>
+      <p>プロフィール、検索結果、最後の投稿。<br/>人はそれを読んでから、会いに来る。<br/>その文脈を意図してデザインするのが、ブランディング。</p>
+    </div>
+    <div class="kw blue rv">
+      <span class="k">TRUST</span>
+      <h3>信用は過去、信頼は一貫性。</h3>
+      <p>フォロワーの数は、追わない。届けたい人に深く届くことだけを、設計する。言ったことを、続ける。それだけが信頼に変わる。</p>
+    </div>
+  </div>
+
+  <div class="audience rv">
+    <span class="audience-label">こんな人に届けたい</span>
+    <div class="chips">
+      <span class="chip">営業マン</span>
+      <span class="chip">医師・士業</span>
+      <span class="chip">コーチ・コンサル</span>
+      <span class="chip">フリーランス</span>
+      <span class="chip">クリエイター</span>
+      <span class="chip">起業家</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker yellow">
+  <div class="ticker-track">
+    <span>BUILD YOUR BRAND</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>PRE-REAL</span><span>✦</span><span>BRANDING IS PLAY</span><span>✦</span>
+    <span>BUILD YOUR BRAND</span><span>✦</span><span>遊びを、ブランドに</span><span>✦</span><span>PRE-REAL</span><span>✦</span><span>BRANDING IS PLAY</span><span>✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services wrap" id="services">
+  <span class="chap red rv">CHAPTER 02 — SERVICES</span>
+  <h2 class="h2 rv">ブランドを、<br/>一緒に組み立てる。</h2>
+
+  <div class="services-banner rv">
+    <img src="../assets/services-comic.webp" alt="SNS CONTENT CREATION / PERSONAL BRANDING / SOCIAL MEDIA MGMT"/>
+  </div>
+
+  <div class="service-card rv">
+    <div class="step">01</div>
+    <span class="eyebrow">STEP 01 · DISCOVER</span>
+    <h3>「当たり前」を、武器に変える。</h3>
+    <p class="lead">対話から、自分では気づけない強みを掘り起こす。</p>
+    <p>つい熱くなる話題、長く続けてきたこと、語りたくなる失敗。言葉にして並べ直すと、それは一枚の地図になる。<b>これから遊んでいくための、あなただけの地図</b>です。</p>
+    <ul>
+      <li>強みの言語化</li><li>価値観の棚卸し</li>
+      <li>届けたい人の設定</li><li>ブランドの中心を決める</li>
+    </ul>
+    <div class="benefit"><span class="bl">OUTPUT</span>ブランドコンセプトシート・核ワードマップ・ペルソナA4 1枚</div>
+  </div>
+
+  <div class="service-card yellow rv">
+    <div class="step">02</div>
+    <span class="eyebrow">STEP 02 · DESIGN</span>
+    <h3>会う前と、会った後。</h3>
+    <p class="lead">「面白そう」で始まり、「もっと知りたい」で続く。</p>
+    <p>会う前には、期待をつくる。会った後には、余韻を残す。プロフィールから投稿の一行まで、<b>すべての接点を同じ温度で</b>整えます。</p>
+    <ul>
+      <li>ブランドページ制作</li><li>プロフィール最適化</li>
+      <li>投稿テンプレート</li><li>一貫性の運用ルール</li>
+    </ul>
+    <div class="benefit"><span class="bl">OUTPUT</span>ブランドLP・SNSヘッダー・プロフ画像・投稿テンプレ一式</div>
+  </div>
+
+  <div class="service-card blue rv">
+    <div class="step">03</div>
+    <span class="eyebrow">STEP 03 · RUN</span>
+    <h3>続けることを、仕組みにする。</h3>
+    <p class="lead">発信は、才能ではなく設計で続く。</p>
+    <p>AIがニュースを拾い、noteとSNSの下書きまで用意する。あなたは自分の言葉をひとさじ足すだけ。月に一度、方向を確かめながら積み上げていきます。</p>
+    <ul>
+      <li>AI × 自動コンテンツ生成</li><li>note下書き自動作成</li>
+      <li>月1回の戦略打ち合わせ</li><li>ブランド方向性レポート</li>
+    </ul>
+    <div class="benefit"><span class="bl">OUTPUT</span>AI自動生成環境・伴走ミーティング（月1回）</div>
+  </div>
+</section>
+
+<div class="ticker red">
+  <div class="ticker-track">
+    <span>遊びを、ブランドに</span><span>✦</span><span>一貫性が信頼を作る</span><span>✦</span><span>PLAY BRANDING</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+    <span>遊びを、ブランドに</span><span>✦</span><span>一貫性が信頼を作る</span><span>✦</span><span>PLAY BRANDING</span><span>✦</span><span>PRE-REAL</span><span>✦</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy wrap" id="philosophy">
+  <span class="chap rv">CHAPTER 03 — PHILOSOPHY</span>
+  <h2 class="h2 rv">ここだけは、<br/>読んでほしい。</h2>
+  <div class="sub rv" style="max-width:none">サービスの話より、先に。PLAY BRANDINGが、静かに持ち続けている四つの考え。</div>
+  <div class="phil-list" id="phil-list"></div>
+</section>
+
+<!-- NOTE -->
+<section class="note wrap" id="note">
+  <span class="chap rv" style="background:var(--ink);color:var(--yellow)">NOTE — もっと深く知る</span>
+  <h2 class="h2 rv">読み物で、<br/>遊び方を知る。</h2>
+  <div class="note-hero rv">
+    <span class="tag">note</span>
+    <h3>サービスを選ぶ前に、<br/>読んでほしい記事。</h3>
+    <p>ブランディングの考え方、設計の裏側、信用資産の育て方。サービスの前に読んでほしい話を、noteに綴っています。</p>
+    <a class="btn lg" href="#" target="_blank">📝 noteを読んでみる →</a>
+    <div class="note-list">
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.04.12</div>
+        <h4>遊びを、ブランドに — 信用資産の育て方</h4>
+      </div>
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.03.28</div>
+        <h4>違えないって、いちばん強い — フォロワー数より大事なこと</h4>
+      </div>
+      <div class="note-item">
+        <div class="meta">NOTE · 2026.03.14</div>
+        <h4>会う前に「文脈」を設計する3つの方法</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq wrap" id="faq">
+  <span class="chap yellow rv">FAQ — よくある質問</span>
+  <h2 class="h2 rv">気になること、<br/>先に答えます。</h2>
+  <div class="faq-list" id="faq-list"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta wrap" id="contact">
+  <div class="cta-box rv">
+    <span class="chap">CHAPTER 04 — LET'S PLAY</span>
+    <h2>まず、遊びに来ませんか。<small>60分・無料・LINEで。</small></h2>
+    <p>資料も、準備も、いりません。最近おもしろかったこと。いつか会ってみたい人。<b>そこから、ぜんぶが始まります。</b></p>
+    <a class="line-btn" href="#"><span class="ico">L</span>LINEで遊びの話をする</a>
+    <div class="line-sub">お問合せはLINE公式のみ。のんびりどうぞ。</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo"><span class="stud">P</span><div>PLAY<small>BRANDING</small></div></div>
+  <p>ブランディングは、遊びだ。違えないことだけを、静かに積む。</p>
+  <h5>NAVIGATION</h5>
+  <a href="#about">→ ABOUT</a>
+  <a href="#services">→ SERVICES</a>
+  <a href="#philosophy">→ PHILOSOPHY</a>
+  <a href="#note">→ NOTE</a>
+  <a href="#faq">→ FAQ</a>
+  <a href="#contact">→ CONTACT</a>
+  <h5>CONTACT & READ</h5>
+  <a href="#">→ LINE公式</a>
+  <a href="#">→ note</a>
+  <h5>LEGAL</h5>
+  <a href="../legal.html#company">→ 会社概要</a>
+  <a href="../legal.html#tokushoho">→ 特定商取引法に基づく表記</a>
+  <a href="../legal.html#privacy">→ プライバシーポリシー</a>
+  <div class="footer-bottom">
+    <div>© 2026 PLAY BRANDING</div>
+    <div>MADE WITH ♥</div>
+  </div>
+</footer>
+
+<!-- Floating LINE CTA -->
+<a href="#contact" class="line-float" id="lf">
+  <span class="i">L</span>LINEで相談
+</a>
+
+<script>
+// Hamburger menu
+const hb=document.getElementById('hb'), menu=document.getElementById('menu');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');menu.classList.toggle('open')});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');menu.classList.remove('open')}));
+
+// Philosophy accordion
+const PHIL=[
+  {n:'PHILOSOPHY 01',t:'PRE-REAL',color:'#E8342A',h:'メラビアンの法則を、会う前から使え。',
+    body:['対面の場で、視覚・聴覚・言語が印象の93%を決める——これがメラビアンの法則。','でも、プレリアルが機能していれば、対面前にすでに印象のベースラインが上がっている。','会った瞬間から、メラビアンが「加速」する。一歩リードした状態で、人生が始まる。']},
+  {n:'PHILOSOPHY 02',t:'TIMES',color:'#FFB800',h:'オンラインも、オフラインも、真実だ。',
+    body:['かつてSNSは「もう一つの顔」だった。本当の自分は、会ってみないと分からなかった。','でも時代は変わった。SNSで見ているあなたと、会った時のあなたは、もう同じ人だ。','だからこそ、発信の一つひとつが人生になる。一つひとつが、あなた自身を作っていく。']},
+  {n:'PHILOSOPHY 03',t:'LOOP',color:'#1E7FD6',h:'終わってからが、次の始まりだ。',
+    body:['対面が終わっても、ブランディングは止まらない。発信を続けることが、次の「つながり」になる。','会った時間が終わっても、あなたと相手は、ゆるく結ばれたまま。そのつながりが、次の誰かのプレリアルになる。','プレリアル → 対面 → つながり → 次のプレリアル。一度回り始めたら、止まらない永久機関だ。']},
+  {n:'PHILOSOPHY 04',t:'DISCIPLINE',color:'#2BB673',h:'発信が、自分を育てる。',
+    body:['「信頼は一貫性が作る」——言ったことを、やり続けること。それは誰かのためだけじゃない。','自分を律する力にもなる。SNSで発信し続けることは、巡り巡って、自分自身を鍛えることだ。','ブランディングは、人生を豊かにする遊び道具である。']},
+];
+const pl=document.getElementById('phil-list');
+PHIL.forEach((p,i)=>{
+  const el=document.createElement('div');
+  el.className='phil-item rv'+(i===0?' open':'');
+  el.innerHTML=`
+    <div class="phil-head">
+      <div>
+        <div class="n">${p.n}</div>
+        <div class="t">${p.t}</div>
+      </div>
+      <div class="plus">+</div>
+    </div>
+    <div class="phil-body"><div class="phil-inner">
+      <span class="lbl" style="color:${p.color}">${p.n} / ${p.t}</span>
+      <h4>${p.h}</h4>
+      ${p.body.map(b=>`<p>${b}</p>`).join('')}
+    </div></div>`;
+  el.querySelector('.phil-head').addEventListener('click',()=>el.classList.toggle('open'));
+  pl.appendChild(el);
+});
+
+// FAQ
+const FAQ=[
+  {q:'対面での面談はありますか？',a:'すべてオンライン（Zoom）またはLINEで完結します。全国どこからでも受けられます。'},
+  {q:'他のブランディングサービスと何が違いますか？',a:'「会う前の印象」まで含めて設計する伴走型です。完全代行ではなく、あなた自身の言葉を一緒に育てます。'},
+  {q:'SNSが苦手でも大丈夫？',a:'むしろ苦手だった人ほど、ギャップが面白さの源泉になります。AIとアナログなサポートの二重伴走で「続く仕組み」を作ります。'},
+  {q:'まず何から始めれば？',a:'まずはオンラインで遊びの話をしましょう。'},
+  {q:'サービス期間はどれくらいですか？',a:'STEP 01〜03で平均3〜6ヶ月が目安です。その後は月1回の伴走で継続できます。'},
+  {q:'料金体系を教えてください',a:'一般的には月額19,800円から、コンサルティング内容によって変動します。詳細は無料相談（60分）であなたに合うプランを一緒に考えます。'},
+  {q:'問い合わせはどこから？',a:'すべてLINE公式アカウントで受け付けています。気軽にメッセージしてください。'},
+];
+const fl=document.getElementById('faq-list');
+FAQ.forEach(f=>{
+  const el=document.createElement('div');
+  el.className='faq-item rv';
+  el.innerHTML=`<div class="faq-q"><span class="qm">Q</span>${f.q}<span class="plus">+</span></div><div class="faq-a"><div><div class="inner"><p>${f.a}</p></div></div></div>`;
+  el.querySelector('.faq-q').addEventListener('click',()=>{
+    const wasOpen=el.classList.contains('open');
+    fl.querySelectorAll('.faq-item.open').forEach(o=>o.classList.remove('open'));
+    if(!wasOpen)el.classList.add('open');
+  });
+  fl.appendChild(el);
+});
+
+// Scroll-reveal
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+// Observe original rv elements + dynamically-inserted ones after a tick
+function bind(){document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el))}
+bind();setTimeout(bind,50);
+
+// Hide floating LINE when near CTA
+const lf=document.getElementById('lf'), cta=document.querySelector('.cta');
+const io2=new IntersectionObserver(es=>{es.forEach(e=>lf.classList.toggle('hidden',e.isIntersecting))},{threshold:0.25});
+io2.observe(cta);
+
+// Tap ripple — LEGO stud
+function spawnTap(x,y){
+  const el=document.createElement('div');
+  el.className='tap-ripple';
+  el.style.left=x+'px';
+  el.style.top=y+'px';
+  // 4 sparks at diagonals
+  const dirs=[[24,-24],[-24,-24],[24,24],[-24,24]];
+  const sparks=dirs.map(([tx,ty])=>`<span class="spark" style="--tx:${tx}px;--ty:${ty}px"></span>`).join('');
+  el.innerHTML=`<span class="ring"></span><div class="stud">P</div>${sparks}`;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),600);
+}
+document.addEventListener('pointerdown',e=>{
+  // Skip when menu open (hamburger covers viewport) — still spawn
+  spawnTap(e.clientX,e.clientY);
+},{passive:true});
+
+/* ── PRELOADER cleanup ── */
+(function(){
+  const pre=document.getElementById('preloader');
+  if(!pre) return;
+  setTimeout(()=>{document.body.classList.remove('preloading');pre.classList.add('done');},3200);
+})();
+</script>
+
+</body>
+</html>

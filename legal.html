@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>LEGAL — PLAY BRANDING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bangers&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#FAF6EC;
+  --paper-2:#F1E9D2;
+  --ink:#111111;
+  --ink-2:#333333;
+  --ink-3:#666666;
+  --line:#111111;
+  --yellow:#FFD21F;
+  --red:#E8342A;
+  --blue:#1E7FD6;
+  --pink:#FFC2BE;
+  --green:#D4F0C4;
+  --impact:'Bowlby One',sans-serif;
+  --jp:'Zen Maru Gothic',sans-serif;
+  --sans:'Noto Sans JP',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--jp);font-size:15px;line-height:1.9;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='42' viewBox='0 0 36 42'><g stroke='%23111' stroke-width='2.5' stroke-linejoin='round'><rect x='6' y='2' width='7' height='6' fill='%23FFD21F' stroke-linecap='round'/><rect x='23' y='2' width='7' height='6' fill='%23FFD21F' stroke-linecap='round'/><rect x='3' y='8' width='30' height='28' fill='%23FFD21F'/></g><text x='18' y='28' font-family='Bowlby One,sans-serif' font-size='18' text-anchor='middle' fill='%23111'>P</text></svg>") 18 21, auto;
+}
+a,a *,button,button *,.back-btn,.back-btn *,.tab-btn,.tab-btn *,[onclick],[onclick] *,[role="button"],[role="button"] *,summary,summary *{
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='46' viewBox='0 0 40 46'><g stroke='%23111' stroke-width='2.5' stroke-linejoin='round'><rect x='7' y='3' width='7' height='6' fill='%23E8342A'/><rect x='26' y='3' width='7' height='6' fill='%23E8342A'/><rect x='4' y='9' width='32' height='30' fill='%23E8342A'/></g><text x='20' y='30' font-family='Bowlby One,sans-serif' font-size='18' text-anchor='middle' fill='%23fff'>!</text></svg>") 20 23, pointer !important;
+}
+/* ── TAP RIPPLE ── */
+.tap-ripple{position:fixed;pointer-events:none;z-index:9999;width:54px;height:54px;margin:-27px 0 0 -27px;animation:tapPop .55s cubic-bezier(.2,.8,.2,1) forwards}
+.tap-ripple .stud{position:relative;width:100%;height:100%;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);display:grid;place-items:center;font-family:var(--impact);font-size:26px;color:var(--ink);border-radius:4px}
+.tap-ripple .stud::before,.tap-ripple .stud::after{content:'';position:absolute;top:-8px;width:12px;height:8px;background:inherit;border:3px solid var(--line);border-bottom:none;box-sizing:content-box;border-radius:2px 2px 0 0}
+.tap-ripple .stud::before{left:6px}
+.tap-ripple .stud::after{right:6px}
+.tap-ripple .ring{position:absolute;inset:-10px;border:3px solid var(--red);border-radius:50%;opacity:0;animation:tapRing .55s cubic-bezier(.2,.8,.2,1) forwards}
+.tap-ripple .spark{position:absolute;left:50%;top:50%;width:7px;height:7px;background:var(--yellow);border:2px solid var(--line);margin:-4px 0 0 -4px;opacity:0;animation:tapSpark .5s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes tapPop{0%{transform:scale(.2) rotate(-20deg);opacity:0}40%{transform:scale(1.15) rotate(6deg);opacity:1}70%{transform:scale(1) rotate(0);opacity:1}100%{transform:scale(.9) rotate(0);opacity:0}}
+@keyframes tapRing{0%{transform:scale(.4);opacity:0}40%{transform:scale(1);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+@keyframes tapSpark{0%{transform:translate(0,0) scale(0);opacity:0}35%{opacity:1}100%{transform:translate(var(--tx,24px),var(--ty,-24px)) scale(1);opacity:0}}
+body{background-image:radial-gradient(#e7dfc9 1px,transparent 1px);background-size:18px 18px}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:flex-end;padding:20px 28px 14px;
+  background:var(--paper);border-bottom:3px solid var(--line);
+}
+.logo{display:flex;align-items:center;gap:14px;font-family:var(--impact);font-size:18px;letter-spacing:.04em}
+.logo .stud{
+  position:relative;
+  display:inline-grid;place-items:center;width:44px;height:44px;
+  background:var(--yellow);border:3px solid var(--line);
+  box-shadow:3px 3px 0 var(--line);font-family:var(--impact);font-size:22px;
+  margin-top:8px;
+}
+.logo .stud::before,
+.logo .stud::after{
+  content:'';position:absolute;top:-7px;
+  width:10px;height:7px;
+  background:var(--yellow);
+  border:3px solid var(--line);
+  border-bottom:none;
+  box-sizing:content-box;
+  border-radius:2px 2px 0 0;
+}
+.logo .stud::before{left:4px}
+.logo .stud::after{right:4px}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;font-weight:700;color:var(--ink-3);margin-top:-2px}
+.back-btn{
+  margin-left:auto;display:inline-block;padding:10px 16px;border:3px solid var(--line);
+  background:var(--paper-2);font-family:var(--impact);letter-spacing:.05em;
+  box-shadow:3px 3px 0 var(--line);font-size:13px;transition:all .1s;
+}
+.back-btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--line);background:var(--yellow)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* HEADER */
+.page-head{padding:54px 0 16px;text-align:center}
+.page-head .eyebrow{
+  display:inline-block;background:var(--ink);color:var(--yellow);
+  font-family:var(--impact);padding:10px 20px;letter-spacing:.2em;
+  border:3px solid var(--line);box-shadow:4px 4px 0 var(--line);font-size:13px;
+}
+.page-head h1{font-family:var(--jp);font-weight:900;font-size:48px;margin:26px 0 10px;letter-spacing:.02em;padding-left:.5em}
+.page-head .sub{color:var(--ink-3);font-size:14px;font-weight:500}
+
+/* COMPANY CARD */
+.company{
+  background:#fff;border:3px solid var(--line);box-shadow:8px 8px 0 var(--line);
+  padding:36px 40px;margin:28px auto 54px;
+}
+.company h2{
+  display:flex;align-items:center;gap:14px;
+  font-family:var(--jp);font-weight:900;font-size:22px;margin:0 0 18px;
+  padding-bottom:12px;border-bottom:3px solid var(--line);
+}
+.company h2 .num{
+  font-family:var(--impact);font-size:12px;background:var(--yellow);color:var(--ink);
+  padding:6px 12px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);letter-spacing:.1em;
+}
+.dl{border-top:2px solid var(--line);margin:0}
+.dl-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #ddd}
+.dl-row dt{
+  padding:16px 18px;background:var(--paper-2);
+  font-family:var(--impact);font-size:12px;letter-spacing:.1em;
+  border-right:2px solid var(--line);
+}
+.dl-row dd{margin:0;padding:16px 20px;font-size:14px;line-height:1.9}
+.dl-row dd small{display:block;color:var(--ink-3);font-size:12px;margin-top:4px}
+
+/* TAB BLOCKS (LEGO BLOCK TABS) */
+.tabs-section{margin:10px 0 40px}
+.tabs-label{
+  font-family:var(--impact);font-size:12px;letter-spacing:.3em;color:var(--ink-3);
+  text-align:center;margin-bottom:22px;
+}
+.tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  max-width:760px;margin:0 auto;padding-top:12px;
+}
+.tab-btn{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:108px;padding:18px 12px 14px;
+  background:var(--paper-2);border:3px solid var(--line);
+  box-shadow:5px 5px 0 var(--line);
+  font-family:var(--jp);font-weight:900;font-size:17px;color:var(--ink);
+  cursor:pointer;transition:transform .1s, box-shadow .1s, background .1s;
+  text-align:center;
+}
+.tab-btn .small{display:block;font-family:var(--impact);font-size:10px;letter-spacing:.18em;color:var(--ink-3);margin-bottom:6px}
+.tab-btn::before,
+.tab-btn::after{
+  content:'';position:absolute;top:-10px;
+  width:22px;height:10px;background:inherit;
+  border:3px solid var(--line);border-bottom:none;
+  box-sizing:content-box;border-radius:3px 3px 0 0;
+}
+.tab-btn::before{left:22%}
+.tab-btn::after{right:22%}
+.tab-btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--line)}
+.tab-btn[data-tab="tokushoho"].on{background:var(--pink)}
+.tab-btn[data-tab="privacy"].on{background:#BEE3FF}
+.tab-btn[data-tab="personal"].on{background:var(--green)}
+.tab-btn.on{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--line)}
+.tab-btn.on .small{color:var(--ink)}
+
+/* CONTENT PANEL */
+.panel{
+  background:#fff;border:3px solid var(--line);box-shadow:8px 8px 0 var(--line);
+  padding:0;margin:0 auto 80px;overflow:hidden;
+  display:none;
+  animation:pop .25s cubic-bezier(.2,.9,.3,1.3);
+}
+.panel.on{display:block}
+@keyframes pop{
+  0%{transform:translateY(8px) scale(.98);opacity:0}
+  100%{transform:none;opacity:1}
+}
+.panel-head{
+  padding:28px 40px;border-bottom:3px solid var(--line);
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.panel[data-panel="tokushoho"] .panel-head{background:var(--pink)}
+.panel[data-panel="privacy"]   .panel-head{background:#BEE3FF}
+.panel[data-panel="personal"]  .panel-head{background:var(--green)}
+.panel-head .num{
+  font-family:var(--impact);font-size:13px;background:var(--ink);color:#fff;
+  padding:8px 14px;border:3px solid var(--line);box-shadow:3px 3px 0 var(--line);letter-spacing:.15em;
+}
+.panel-head h2{font-family:var(--jp);font-weight:900;font-size:26px;margin:0}
+.panel-head .updated{
+  margin-left:auto;color:var(--ink-2);font-family:var(--sans);font-size:11px;letter-spacing:.15em;
+  background:#fff;padding:6px 10px;border:2px solid var(--line);
+}
+.panel-body{padding:40px 44px 48px}
+.panel-body h3{
+  font-family:var(--jp);font-weight:900;font-size:17px;margin:28px 0 10px;
+  padding-left:14px;border-left:6px solid var(--yellow);
+}
+.panel-body h3:first-child{margin-top:6px}
+.panel-body p{margin:0 0 12px;font-size:14px}
+.panel-body ul,.panel-body ol{padding-left:22px;margin:6px 0 12px;font-size:14px}
+.panel-body ul li,.panel-body ol li{margin:6px 0}
+.note{
+  background:var(--paper-2);border:2px dashed var(--line);padding:14px 18px;
+  font-size:12.5px;color:var(--ink-2);margin:18px 0;line-height:1.8;
+}
+.intro{
+  background:#FFFBEA;border:2px solid var(--line);padding:14px 18px;
+  font-size:13.5px;margin:0 0 18px;
+}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--paper);padding:40px 0 24px;border-top:3px solid var(--line)}
+footer .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer a{color:var(--yellow);font-family:var(--impact);font-size:13px;letter-spacing:.1em}
+footer small{color:#999;font-size:12px;font-family:var(--sans)}
+
+@media (max-width:780px){
+  .page-head h1{font-size:34px}
+  .company{padding:22px 18px}
+  .dl-row{grid-template-columns:100px 1fr}
+  .dl-row dt{padding:10px;font-size:10px}
+  .dl-row dd{padding:10px 12px;font-size:13px}
+  .tabs{grid-template-columns:1fr;gap:22px;max-width:420px}
+  .tab-btn{min-height:80px;font-size:16px}
+  .panel-head{padding:18px 20px}
+  .panel-head h2{font-size:20px}
+  .panel-body{padding:24px 20px 32px}
+}
+@media (max-width:560px){
+  html,body{font-size:12.5px;line-height:1.8}
+  .page-head h1{font-size:26px;margin:18px 0 8px}
+  .page-head .sub{font-size:11.5px}
+  .badge{font-size:11px;padding:7px 14px;letter-spacing:.15em}
+  .company{padding:16px 14px}
+  .company h2{font-size:16px;gap:10px;padding-bottom:10px;margin:0 0 12px}
+  .company h2 .num{font-size:10px;padding:5px 9px}
+  .dl-row{grid-template-columns:82px 1fr}
+  .dl-row dt{padding:7px 8px;font-size:9.5px;letter-spacing:.05em}
+  .dl-row dd{padding:7px 10px;font-size:11.5px;line-height:1.7}
+  .dl-row dd small{font-size:10px}
+  .tab-btn{min-height:66px;font-size:13.5px}
+  .tab-btn .small{font-size:9px;margin-bottom:4px}
+  .panel-head{padding:14px 14px;gap:10px}
+  .panel-head .num{font-size:10.5px;padding:5px 9px}
+  .panel-head h2{font-size:15px}
+  .panel-head .updated{font-size:9.5px;padding:4px 7px}
+  .panel-body{padding:16px 14px 22px}
+  .panel-body h3{font-size:13px;margin:18px 0 8px;padding-left:10px;border-left-width:4px}
+  .panel-body p,.panel-body ul,.panel-body ol{font-size:11.5px;line-height:1.8}
+  .panel-body ul,.panel-body ol{padding-left:18px;margin:4px 0 10px}
+  .intro{font-size:11.5px;padding:10px 12px;line-height:1.75}
+  .note{font-size:10.5px;padding:10px 12px;line-height:1.7;margin:14px 0}
+  .tabs-label{font-size:10px;margin-bottom:16px;letter-spacing:.2em}
+  .back-btn{font-size:11px;padding:7px 11px}
+  .logo{font-size:14px;gap:10px}
+  .logo .stud{width:34px;height:34px;font-size:17px}
+  .logo small{font-size:8.5px;letter-spacing:.2em}
+  header{padding:12px 16px}
+  footer{padding:26px 0 18px}
+  footer a{font-size:11px}
+  footer small{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="prototype.html" class="logo">
+    <span class="stud">P</span>
+    <div>PLAY<small>BRANDING</small></div>
+  </a>
+  <a href="prototype.html" class="back-btn">← HOME</a>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <span class="eyebrow">LEGAL / 会社情報</span>
+    <h1>ルールも、ちゃんと。</h1>
+    <div class="sub">遊び心の裏側にある、しっかりした土台の話。</div>
+  </header>
+
+  <!-- ===== 会社概要（固定表示）===== -->
+  <section class="company" id="sec-company">
+    <h2><span class="num">01</span>会社概要</h2>
+    <dl class="dl">
+      <div class="dl-row"><dt>会社名</dt><dd>株式会社WITH HOLDINGS<br/><small>(WITH HOLDINGS inc.)</small></dd></div>
+      <div class="dl-row"><dt>代表取締役</dt><dd>遠藤 啓太</dd></div>
+      <div class="dl-row"><dt>設立</dt><dd>2020年5月25日</dd></div>
+      <div class="dl-row"><dt>所在地</dt><dd>〒160-0022 東京都新宿区新宿 1-36-2 新宿第七葉山ビル 3F</dd></div>
+      <div class="dl-row"><dt>連絡先</dt><dd>LINE公式アカウントにて受付<br/><small>※電話・メール窓口は設けておりません</small></dd></div>
+      <div class="dl-row"><dt>サービス名</dt><dd>PLAY BRANDING（プレイ・ブランディング）</dd></div>
+      <div class="dl-row"><dt>事業内容</dt><dd>
+        ・パーソナルブランディング支援<br/>
+        ・SNS運用サポート／コンテンツ制作支援<br/>
+        ・AI活用による発信の仕組みづくり
+      </dd></div>
+    </dl>
+  </section>
+
+  <!-- ===== タブ切替 ===== -->
+  <section class="tabs-section">
+    <div class="tabs-label">▼ 各法令に基づく記載はこちら ▼</div>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn on" data-tab="tokushoho" role="tab">
+        <span class="small">ART.02</span>特定商取引法
+      </button>
+      <button class="tab-btn" data-tab="privacy" role="tab">
+        <span class="small">ART.03</span>プライバシー
+      </button>
+      <button class="tab-btn" data-tab="personal" role="tab">
+        <span class="small">ART.04</span>個人情報の取扱い
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== Panels ===== -->
+  <!-- 02 特商法 -->
+  <section class="panel on" data-panel="tokushoho">
+    <div class="panel-head">
+      <span class="num">ART.02</span>
+      <h2>特定商取引法に基づく表記</h2>
+      <span class="updated">LAST UPDATED · 2026.04.19</span>
+    </div>
+    <div class="panel-body">
+      <p class="intro">本表記は、特定商取引に関する法律（昭和51年法律第57号）第11条の規定に基づき、当社が提供するサービスに関する必要事項を記載するものです。</p>
+
+      <dl class="dl">
+        <div class="dl-row"><dt>販売事業者</dt><dd>株式会社WITH HOLDINGS</dd></div>
+        <div class="dl-row"><dt>運営統括責任者</dt><dd>遠藤 啓太</dd></div>
+        <div class="dl-row"><dt>所在地</dt><dd>〒160-0022 東京都新宿区新宿 1-36-2 新宿第七葉山ビル 3F</dd></div>
+        <div class="dl-row"><dt>連絡先</dt><dd>LINE公式アカウントよりお問い合わせください<br/><small>※お問い合わせには原則として3営業日以内にご回答いたします。<br/>※電話番号・メールアドレスは、ご請求があった場合に遅滞なく開示いたします。</small></dd></div>
+        <div class="dl-row"><dt>販売価格</dt><dd>各サービス・プランの紹介ページに記載の金額（消費税込）<br/>個別お見積もりの場合は、ご契約前に書面または電子的手段にて提示いたします。</dd></div>
+        <div class="dl-row"><dt>商品代金以外の必要料金</dt><dd>
+          ・銀行振込の場合：振込手数料はお客様のご負担となります<br/>
+          ・通信費：インターネット接続に必要な通信料はお客様のご負担となります<br/>
+          ・消費税：販売価格に含まれます
+        </dd></div>
+        <div class="dl-row"><dt>支払方法</dt><dd>
+          ・銀行振込（前払い）<br/>
+          ・クレジットカード決済<br/>
+          ・月額継続サービスは、毎月の契約更新日に自動決済
+        </dd></div>
+        <div class="dl-row"><dt>支払時期</dt><dd>
+          ・初回契約時：ご契約完了後7日以内<br/>
+          ・継続プラン：毎月の契約更新日<br/>
+          ・クレジットカード決済：カード会社の定める引落日
+        </dd></div>
+        <div class="dl-row"><dt>商品・役務の引渡時期</dt><dd>
+          ・コンサルティング：契約締結後、ヒアリング日程に沿って順次提供<br/>
+          ・ブランドページ制作：契約締結・ヒアリング完了後、概ね4〜6週間<br/>
+          ・月額サービス：決済完了後、速やかに提供開始
+        </dd></div>
+        <div class="dl-row"><dt>返品・キャンセルについて</dt><dd>
+          本サービスは役務（サービス）提供型のため、契約成立後のお客様都合による返金・キャンセルは原則としてお受けできません。<br/>
+          ただし、以下の場合はこの限りではありません：<br/>
+          ・サービス開始前のキャンセル：所定の事務手数料を差し引いた金額を返金<br/>
+          ・当社の責に帰すべき事由による不提供：全額返金<br/>
+          ・消費者契約法その他関連法令の規定により取消または解除が認められる場合
+        </dd></div>
+        <div class="dl-row"><dt>動作環境</dt><dd>
+          最新バージョンのブラウザ（Google Chrome／Safari／Microsoft Edge等）を推奨します。<br/>
+          LINE公式アカウントをご利用いただくため、LINEアプリのインストールが必要です。
+        </dd></div>
+        <div class="dl-row"><dt>特別な販売条件</dt><dd>
+          ・サービスの性質上、お客様の個別状況により成果は異なります<br/>
+          ・当社は、法令および社会通念上相当と認められる範囲を超えた成果保証を行うものではありません
+        </dd></div>
+      </dl>
+
+      <div class="note">
+        ※本表記は特定商取引に関する法律第11条および同法施行規則第23条に基づき作成しています。<br/>
+        ※法令で定められた事項のうち、請求があった場合に遅滞なく提供するものについては、本ページ上での記載を省略しております。
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 プライバシーポリシー -->
+  <section class="panel" data-panel="privacy">
+    <div class="panel-head">
+      <span class="num">ART.03</span>
+      <h2>プライバシーポリシー</h2>
+      <span class="updated">LAST UPDATED · 2026.04.19</span>
+    </div>
+    <div class="panel-body">
+      <p class="intro">株式会社WITH HOLDINGS（以下「当社」といいます）は、当社が提供するサービス「PLAY BRANDING」をはじめとする全サービスにおいて、お客様（以下「ユーザー」といいます）の個人情報の重要性を認識し、個人情報の保護に関する法律（以下「個人情報保護法」といいます）その他の関連法令およびガイドラインを遵守するとともに、以下のプライバシーポリシー（以下「本ポリシー」といいます）に従い、適切に取り扱います。</p>
+
+      <h3>第1条（事業者情報）</h3>
+      <ul>
+        <li>法人名：株式会社WITH HOLDINGS</li>
+        <li>所在地：〒160-0022 東京都新宿区新宿 1-36-2 新宿第七葉山ビル 3F</li>
+        <li>代表者：代表取締役 遠藤 啓太</li>
+      </ul>
+
+      <h3>第2条（取得する情報）</h3>
+      <p>当社は、ユーザーから以下の情報を取得することがあります。</p>
+      <ol>
+        <li>氏名、会社名、職業、年齢、性別等の属性情報</li>
+        <li>メールアドレス、電話番号、住所、LINE ID等の連絡先情報</li>
+        <li>ヒアリング等で取得する事業内容・活動目的等に関する情報</li>
+        <li>お支払いに関する情報（決済事業者を介して取得するものを含みます）</li>
+        <li>当サイトのアクセスログ、Cookie、IPアドレス、閲覧履歴、端末情報</li>
+        <li>その他、ユーザーが任意で当社に提供する情報</li>
+      </ol>
+
+      <h3>第3条（個人情報の利用目的）</h3>
+      <p>当社は、取得した個人情報を以下の目的で利用します。個人情報保護法第17条に従い、利用目的を変更する場合は、変更前の利用目的と相当の関連性を有すると合理的に認められる範囲内で行います。</p>
+      <ol>
+        <li>本サービスの提供・運営、および契約の履行のため</li>
+        <li>ユーザーからのお問い合わせ・ご相談への対応のため</li>
+        <li>本サービスに関する連絡・重要なお知らせの配信のため</li>
+        <li>本サービスの改善、新サービスの開発のため</li>
+        <li>利用規約、プライバシーポリシーその他の規定に違反する行為への対応のため</li>
+        <li>当社のサービスに関する情報・マーケティング情報の提供のため（事前にご同意いただいた場合に限ります）</li>
+        <li>統計データの作成および分析のため（個人を特定できない形式に加工のうえ利用します）</li>
+      </ol>
+
+      <h3>第4条（個人情報の第三者提供）</h3>
+      <p>当社は、次に掲げる場合を除き、あらかじめユーザーの同意を得ることなく、個人情報を第三者に提供いたしません。</p>
+      <ol>
+        <li>法令に基づく場合</li>
+        <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+        <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+        <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+        <li>合併その他の事由による事業の承継に伴って個人情報が提供される場合</li>
+      </ol>
+
+      <h3>第5条（個人情報の取扱いの委託）</h3>
+      <p>当社は、利用目的の達成に必要な範囲内において、個人情報の取扱いの全部または一部を第三者に委託することがあります。この場合、当社は委託先に対する必要かつ適切な監督を行います。</p>
+
+      <h3>第6条（外部サービスの利用）</h3>
+      <p>当社のウェブサイトおよびサービスでは、以下の外部サービスを利用しており、これらのサービスを通じてCookie等の情報が取得されることがあります。</p>
+      <ul>
+        <li>Google Analytics（アクセス解析／提供元：Google LLC）</li>
+        <li>LINE公式アカウント（お問い合わせ対応／提供元：LINEヤフー株式会社）</li>
+        <li>Meta Pixel（広告最適化／提供元：Meta Platforms, Inc.）</li>
+        <li>note（コンテンツ配信／提供元：note株式会社）</li>
+      </ul>
+      <p>各サービスにおける情報の取扱いは、各提供事業者のプライバシーポリシーに従います。</p>
+
+      <h3>第7条（安全管理措置）</h3>
+      <p>当社は、個人情報の漏えい、滅失または毀損を防止するため、組織的・人的・物理的・技術的安全管理措置を講じます。具体的な措置の内容については、ご請求に応じて開示いたします。</p>
+
+      <h3>第8条（保有個人データの開示・訂正・利用停止等）</h3>
+      <p>当社は、ユーザーご本人から、個人情報保護法に基づく保有個人データの開示、訂正、追加、削除、利用停止、第三者提供の停止等のご請求があった場合、法令の定めるところにより、本人確認のうえ、合理的な期間内に対応いたします。</p>
+
+      <h3>第9条（お問い合わせ窓口）</h3>
+      <p>本ポリシーに関するご質問・ご意見、開示等のご請求につきましては、LINE公式アカウントよりご連絡ください。</p>
+
+      <h3>第10条（本ポリシーの変更）</h3>
+      <p>当社は、法令の改正または運用上必要と判断した場合、本ポリシーの内容を変更することがあります。変更後のポリシーは、本ページに掲載した時点より効力を生じるものとします。</p>
+
+      <div class="note">
+        制定日：2026年4月19日<br/>
+        最終改定日：2026年4月19日<br/>
+        株式会社WITH HOLDINGS 代表取締役 遠藤 啓太
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 個人情報の取扱い -->
+  <section class="panel" data-panel="personal">
+    <div class="panel-head">
+      <span class="num">ART.04</span>
+      <h2>個人情報の取扱いについて</h2>
+      <span class="updated">LAST UPDATED · 2026.04.19</span>
+    </div>
+    <div class="panel-body">
+      <p class="intro">株式会社WITH HOLDINGSが運営する PLAY BRANDING のサービスをご利用いただくにあたり、お預かりする個人情報の具体的な取扱いについて、個人情報保護法に基づきご案内いたします。本記載は、プライバシーポリシーの補足として、サービス利用時に特に重要となる事項を明示するものです。</p>
+
+      <h3>1. 取得する情報の種類</h3>
+      <ul>
+        <li>ご本人確認のための情報（氏名、ご連絡先等）</li>
+        <li>ご契約手続きに必要な情報（住所、請求書宛名、インボイス登録番号等）</li>
+        <li>サービス提供に必要な情報（事業内容、活動実績、写真、音声、動画、原稿等）</li>
+        <li>お支払いに関する情報（口座情報、クレジットカード情報は決済代行会社が保持）</li>
+      </ul>
+
+      <h3>2. 利用目的</h3>
+      <ul>
+        <li>本サービスの円滑な提供および運営管理のため</li>
+        <li>ご契約内容の履行、契約書・請求書その他書類の作成・送付のため</li>
+        <li>ユーザーのブランディング支援コンテンツの企画・制作・改善のため</li>
+        <li>サービス向上のためのヒアリング、アンケート実施のため</li>
+        <li>導入事例・実績としての活用（ご本人の事前同意をいただいたものに限ります）</li>
+      </ul>
+
+      <h3>3. 取得方法</h3>
+      <p>個人情報は、以下の方法により、適正な手段で取得します。</p>
+      <ul>
+        <li>ご契約時・ヒアリング時にご本人から直接提供いただく方法</li>
+        <li>公式LINE、お問い合わせフォーム、メールを通じた受領</li>
+        <li>Cookieその他の技術による自動取得（ウェブサイト訪問時）</li>
+      </ul>
+
+      <h3>4. 保管・セキュリティ</h3>
+      <p>お預かりした情報は、アクセス権限の管理、パスワード・暗号化等による保護、定期的な見直しを行ったうえで、必要最小限の範囲でのみ取り扱います。業務上やむを得ず外部パートナー（協力デザイナー・エンジニア・編集者等）と共有する必要がある場合は、秘密保持契約を締結し、安全管理措置の遵守を求めたうえで行います。</p>
+
+      <h3>5. 保管期間</h3>
+      <p>個人情報は、利用目的の達成に必要な期間に限り保有し、以下の基準に従って削除または廃棄します。</p>
+      <ul>
+        <li>ご契約終了後、原則として2年以内に削除（協議により延長する場合があります）</li>
+        <li>会社法、法人税法その他の法令により保存義務のある書類は、各法令所定の保管期間</li>
+        <li>事例掲載にご同意いただいたコンテンツは、掲載停止のお申し出があるまで継続的に掲載</li>
+      </ul>
+
+      <h3>6. ご本人の権利</h3>
+      <p>ユーザーは、当社が保有するご自身の個人情報について、個人情報保護法第33条以下に基づき、以下の権利を有しています。</p>
+      <ul>
+        <li>利用目的の通知、開示の請求</li>
+        <li>内容の訂正、追加、削除の請求</li>
+        <li>利用停止、消去、第三者への提供停止の請求</li>
+      </ul>
+      <p>ご請求は公式LINEよりお願いいたします。ご本人確認のうえ、法令の定めに従い対応いたします。</p>
+
+      <h3>7. Cookie等の利用について</h3>
+      <p>当サイトでは、ユーザー体験の向上およびアクセス解析を目的として、Cookieおよび類似技術を使用する場合があります。ユーザーは、ブラウザの設定によりCookieの受入を拒否することができますが、その場合、一部のサービスをご利用いただけなくなることがあります。</p>
+
+      <h3>8. 未成年者の個人情報について</h3>
+      <p>当社は、原則として15歳未満の方から個人情報を取得しません。未成年者（18歳未満）がサービスをご利用になる際は、必ず保護者の同意を得たうえでご利用ください。</p>
+
+      <h3>9. お問い合わせ窓口</h3>
+      <p>個人情報の取扱いに関するお問い合わせ、ご質問、苦情等は、LINE公式アカウントまでご連絡ください。<br/>
+      受付主体：株式会社WITH HOLDINGS 個人情報お問い合わせ窓口<br/>
+      所在地：〒160-0022 東京都新宿区新宿 1-36-2 新宿第七葉山ビル 3F</p>
+
+      <div class="note">
+        本記載は、ユーザーが安心してサービスをご利用いただくための基本方針です。<br/>
+        より詳細な方針については「プライバシーポリシー」をご参照ください。
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div><a href="prototype.html">← PLAY BRANDING</a></div>
+    <small>© 2020–2026 WITH HOLDINGS inc. / PLAY BRANDING. ALL RIGHTS RESERVED.</small>
+  </div>
+</footer>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.panel');
+function activate(key, scroll){
+  tabs.forEach(t=>t.classList.toggle('on', t.dataset.tab===key));
+  panels.forEach(p=>p.classList.toggle('on', p.dataset.panel===key));
+  if(scroll){
+    const y = document.querySelector('.tabs-section').getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({top:y, behavior:'smooth'});
+  }
+  history.replaceState(null,'','#'+key);
+}
+tabs.forEach(t=>t.addEventListener('click',()=>activate(t.dataset.tab, true)));
+// init from hash
+const hash = location.hash.replace('#','');
+if(['tokushoho','privacy','personal'].includes(hash)) activate(hash, false);
+
+/* ── TAP RIPPLE ── */
+(function(){
+  const GLYPHS=['!','★','P','★','+','●'];
+  const COLORS=[
+    {bg:'#FFD21F',fg:'#111'},
+    {bg:'#E8342A',fg:'#fff'},
+    {bg:'#1E7FD6',fg:'#fff'},
+    {bg:'#fff',fg:'#111'}
+  ];
+  let i=0;
+  window.addEventListener('pointerdown',(e)=>{
+    const t=e.target;
+    if(t.closest('input,textarea,select')) return;
+    const c=COLORS[i%COLORS.length];
+    const g=GLYPHS[i%GLYPHS.length];
+    i++;
+    const wrap=document.createElement('div');
+    wrap.className='tap-ripple';
+    wrap.style.left=e.clientX+'px';
+    wrap.style.top=e.clientY+'px';
+    wrap.innerHTML=`<div class="ring"></div><div class="stud" style="background:${c.bg};color:${c.fg}">${g}</div>`+
+      [[-30,-28],[28,-30],[-32,22],[26,26]].map(([x,y])=>`<div class="spark" style="--tx:${x}px;--ty:${y}px"></div>`).join('');
+    document.body.appendChild(wrap);
+    setTimeout(()=>wrap.remove(),600);
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
